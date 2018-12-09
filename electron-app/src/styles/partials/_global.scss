@@ -1,0 +1,22 @@
+body {
+  background: $black;
+  color: $white;
+  font-family: "Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+  text-rendering: optimizeLegibility;
+  height: 100vh;
+  overflow: auto;
+}
+
+.app {
+  text-align: center;
+  display: -webkit-flex;
+  display: flex;
+  height: 100%;
+}
+
+.main {
+  width: 100%;
+  background: #f7fafb;
+}
