@@ -30,23 +30,6 @@ class Nav extends Component {
     return false;
   }
 
-  wait(ms){
-    var start = new Date().getTime();
-    var end = start;
-    while(end < start + ms) {
-      end = new Date().getTime();
-   }
- }
- clone(obj){
-  if(obj == null || typeof(obj) != 'object')
-      return obj;
-
-  var temp = new obj.constructor(); 
-  for(var key in obj)
-      temp[key] = clone(obj[key]);
-
-  return temp;
-}
   componentDidMount() {
     const db = firebase.firestore();
     db.collection("userRepos").doc(this.state.profile.nickname).onSnapshot((doc) => {
