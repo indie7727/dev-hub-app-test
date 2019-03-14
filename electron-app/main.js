@@ -1,4 +1,4 @@
-const {app, BrowserWindow} = require('electron')
+const {shell, app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
 
@@ -10,9 +10,9 @@ function createWindow () {
   // Create the browser window.
   win = new BrowserWindow({
     width: 900, 
-    height: 630,
-    minHeight: 400,
-    minWidth: 850
+    height: 650,
+    minHeight: 450,
+    minWidth: 870
   })
 
   // and load the index.html of the app.
@@ -32,6 +32,7 @@ function createWindow () {
     // when you should delete the corresponding element.
     win = null
   })
+
 }
 
 // This method will be called when Electron has finished

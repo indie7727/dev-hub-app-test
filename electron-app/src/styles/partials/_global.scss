@@ -13,10 +13,11 @@ body {
   text-align: center;
   display: -webkit-flex;
   display: flex;
-  height: 100%;
 }
 
 .main {
   width: 100%;
   background: #f7fafb;
+  overflow: scroll;
+  height: 100vh;
 }

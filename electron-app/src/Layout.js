@@ -7,7 +7,6 @@ export default class Layout extends Component {
     this.state = {
       profile: props.route.auth.getProfile()
     }
-    console.log(props.route.auth.getProfile())
     props.route.auth.on('profile_updated', (newProfile) => {
       this.setState({ profile: newProfile })
     })

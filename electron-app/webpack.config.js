@@ -43,7 +43,10 @@ var config = {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.IgnorePlugin(new RegExp("^(fs|ipc)$"))
     ],
-    target: "node"
+    target: "async-node",
+    node: {
+        fs: "empty"
+    },
 };
 
 module.exports = config;

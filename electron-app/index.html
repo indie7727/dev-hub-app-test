@@ -4,12 +4,26 @@
 <head>
   <title>Dev Hub</title>
   <link rel="stylesheet" href="node_modules/xel/themes/material.css">
-  <script src="node_modules/xel/xel.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAG-_8s-oKz96rTm9T8sD-z5DOgrhPS3Bg",
+      authDomain: "dev-hub-a8bdc.firebaseapp.com",
+      databaseURL: "https://dev-hub-a8bdc.firebaseio.com",
+      projectId: "dev-hub-a8bdc",
+      storageBucket: "dev-hub-a8bdc.appspot.com",
+      messagingSenderId: "646086604998"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="node_modules/xel/xel.min.js"></script>
+
 </head>
 <body>
-  <div style="height:100%;" id="app"></div>
+  <div id="app"></div>
   <script>
     (function() {
       const script = document.createElement('script');

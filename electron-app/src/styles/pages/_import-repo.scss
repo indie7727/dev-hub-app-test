@@ -1,3 +1,124 @@
+.import-repo-title {
+    color: black;
+    font-weight: bolder;
+    text-align: left;
+    font-size: 40px;
+}
+
+.import-repo {
+    margin: 8.5%;
+}
+
+.import-repo-input-form {
+    width: 100%;
+    padding: 15px 0;
+    margin-top: 2%;     
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 0.8em;
+    font-weight: 500;
+    color: #222;
+    align-content: center;
+    align-items: center;   
+}
+
+.val-err-tooltip {
+    font-size: 0.8em;
+    font-weight: 500;
+    color: #d83131e8;
+}
+
+label .aux {
+    font-size: 0.85em;
+    margin-top: 0.15em;
+    float: right;
+}
+
+input[type="url"] {
+    box-shadow: inset 0 0.0425em 0.085em rgba(0,0,0,.2);
+    opacity: .75;
+    width: 100%;
+    height: 38px;
+    padding:0.6em 0.6em;
+    margin:0.6em 0 2em 0;
+    border: 1px solid #9e9e9e;
+    border-radius: 5px;
+    background: #fff;
+    font-size: .9em;
+}
+
+input[type="url"]:focus {
+    outline: none;
+    background-color: #fff;
+    border-color: rgba(28, 126, 194,.8);
+    box-shadow: inset 0 0.0425em 0.085em rgba(0,0,0,.2), 0 0 0.085em rgba(28, 126, 194,.8);
+    opacity: 1;
+}
+
+input[type="url"]:invalid {
+    border-color: rgba(203,0,2,.8);
+    box-shadow: inset 0 0.0325em 0.055em rgba(0,0,0,.2), 0 0 0.055em rgba(203,0,2,.8);
+}
+
+.replica-count {
+    width: 20%;
+    padding:0.6em 0.6em;
+    margin-top:0.6em;
+    box-shadow: inset 0 0.0425em 0.085em rgba(0,0,0,.2);
+    opacity: .75;
+    height: 38px;
+    border: 1px solid #9e9e9e;
+    border-radius: 5px;
+    background: #fff;
+    font-size: .9em;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+.import-repo-submit-button, #next-button, #prev-button {
+    font-size: 1em;
+    float: left;
+    padding: 0.5em 1em;
+    margin: 0.375em 0 1.25em 0;
+    border-radius: 4px; 
+    background-color: #30849e;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.import-repo-submit-button:disabled {
+    background-color: #d8e1e6;
+    color: #000;
+    cursor: auto;
+}
+
+.import-repo-submit-link, .import-repo-submit-link:hover {
+    color: #fff;
+}
+
+.import-repo-cancel-button {
+    font-size: 1.2em;
+    float: left;
+    padding: 0.4em 0.5em;
+    margin: 0.375em 0 1.25em 0.4em;
+    border-radius: 4px; 
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+}
+
+.bold {
+    font-weight: bold !important;
+}
+
 .shell {
     background: #000000e0;
     color: white;
@@ -8,4 +129,308 @@
     float: left;
     font-size: 0.7em;
     border-radius: 10px;
+}
+
+
+ol.progtrckr {
+    margin: 0;
+    padding-bottom: 2.2rem;
+    list-style-type: none;
+    width: 80%;
+    padding-top: 0.3rem;
+    display: flex;
+}
+ol.progtrckr li {
+    display: inline-block;
+    text-align: center;
+    line-height: 4.3rem;
+}
+ol.progtrckr li span {
+    padding: 0px 0.2rem 0px 0.1rem;
+    font-size: 15px;   
+}
+@media (max-width: 650px) {
+    .progtrckr li span {
+      display: none;
+    }
+}
+.progtrckr em {
+    display: none;
+    font-weight: 700;
+    padding-left: 1rem;
+}
+@media (max-width: 650px) {
+    .progtrckr em {
+      display: inline;
+    }
+}
+  
+ol.progtrckr li.progtrckr-todo {
+    color: #7b7b7b;
+    border-bottom: 3px solid #a0a0a0;
+}
+ol.progtrckr li.progtrckr-doing {
+    color: black;
+    border-bottom: 3px solid #2490b1;
+}
+ol.progtrckr li.progtrckr-done {
+    color: black;
+    border-bottom: 3px solid #2490b1;
+}
+ol.progtrckr li:after {
+    content: "\00a0\00a0";
+}
+ol.progtrckr li:before {
+    position: relative;
+    bottom: -3.7rem;
+    float: left;
+    left: 43%;
+}
+ol.progtrckr li.progtrckr-todo:before {
+    content: "\2022";
+    color: white;
+    background-color: #a0a0a0;
+    width: 1.4em;
+    line-height: 1.4em;
+    border-radius: 1.2em;
+}
+ol.progtrckr li.progtrckr-todo:hover:before {
+    color: white;
+}
+  
+ol.progtrckr li.progtrckr-doing:before {
+    content: "\2022";
+    color: white;
+    background-color: #2490b1;
+    width: 1.4em;
+    line-height: 1.4em;
+    border-radius: 1.2em;
+}
+ol.progtrckr li.progtrckr-doing:hover:before {
+    color: white;
+}
+  
+ol.progtrckr li.progtrckr-done:before {
+    content: "\2713";
+    color: white;
+    background-color: #2490b1;
+    width: 1.4em;
+    line-height: 1.4em;
+    border-radius: 1.2em;
+}
+ol.progtrckr li.progtrckr-done:hover:before {
+    color: #0FA0CE;
+}
+
+.step-div{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    margin-top: 5px;
+    background: #e7e6ec54;
+    border-radius: 6px;
+}
+
+.staging-env-vars, .production-env-vars, .preview-env-vars {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+    background: #e7e6ec54;
+    width: 111.5%;
+    padding: 10px 0px 0px 15px;
+    border-radius: 6px;
+}
+
+
+.env-vars-main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+    width: 415px;
+}
+
+.port-mapping-main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+    width: 490px;
+    background: #e7e6ec54;
+    padding: 10px 0px 0px 15px;
+    border-radius: 6px;
+    margin: 10px 0px;
+}
+
+#dynamicInput {
+    padding: 11px 0px 15px 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+.env-vars-add-button, .port-mapping-add-button {
+    color: #2c98c5;
+    margin-left: 1px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.env-vars-remove-button, .port-mapping-remove-button {
+    color: #c52c2c;
+    margin-left: 1px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    margin: 7px 5px;
+}
+
+.env-input-box-key{
+    width: 200px;
+    height: 32px;
+    padding: 0 10px;
+    border: 1px solid #9e9e9e;
+    border-radius: 6px;
+    background: #fff;
+    font-size: .75em;
+}
+
+.env-input-box-value{
+    width: 200px;
+    margin-left: 15px;
+    height: 32px;
+    padding: 0 10px;
+    border: 1px solid #9e9e9e;
+    border-radius: 6px;
+    background: #fff;
+    font-size: .75em;
+}
+
+.footer-buttons{
+    margin-top: 20px;
+}
+
+.port-mapping-input-box-port{
+    width: 80px;
+    height: 32px;
+    padding: 0 10px;
+    border: 1px solid #9e9e9e;
+    border-radius: 6px;
+    background: #fff;
+    font-size: .75em;
+}
+
+.port-mapping-input-box-url{
+    width: 150px;
+    height: 32px;
+    padding: 0 10px;
+    border: 1px solid #9e9e9e;
+    background: #fff;
+    font-size: .75em;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+.port-mapping-text-https {
+    color: black;
+    background: #b3b3b321;
+    height: 32px;
+    padding: 10px 10px 20px 10px;
+    font-size: .75em;
+    margin-left: 25px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border: 1px solid #9e9e9e;
+    border-right: 0px;
+}
+
+.port-mapping-text-domain {
+    color: black;
+    height: 32px;
+    padding: 10px 10px 20px 10px;
+    font-size: .75em;
+    background: #b3b3b321;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border: 1px solid #9e9e9e;
+    border-left: 0px;
+}
+
+.addon-box-outer {
+    color: black;
+    padding: 15px;
+    background: #e7e6ec54;
+    margin: 15px 0px 0px 0px;
+    font-size: 0.9em;
+    border-radius: 6px;
+}
+
+.addon-header {
+    font-weight: 500;
+    color: #07556fe0;
+    font-size: 1.1em;
+    letter-spacing: 0.1px;
+}
+
+.addon-description {
+    font-size: 0.9em;
+    margin-top: 2px;
+}
+
+.addon-label {
+    margin-left: 15px;
+}
+
+.addon-input-box {
+    margin: 10px 0px 5px 15px;
+    width: 150px;
+    box-shadow: inset 0 0.0425em 0.085em rgba(0, 0, 0, 0.2);
+    opacity: .75;
+    padding: 0.6em 0.6em;
+    border: 1px solid #9e9e9e;
+    border-radius: 5px;
+    background: #fff;
+    font-size: .8em;
+    line-height: 10px;
+}
+
+.addon-input-text {
+    margin: 19px 0px 5px 15px;
+    font-size: .9em;
+}
+
+x-switch[skin="big"] {
+    width: 37px;
+    --thumb-size: 20px;
+    --track-height: 70%;
+}
+
+.import-button {
+    margin-left: 80px;
+    margin-top: 25px;
+    position: fixed;
+    background-color: #30849e;
+    color: #fff;
+    height: 38px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 0.5em 1em;
+}
+
+.import-loading-main {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    display: flex;
+}
+
+.import-throbber {
+    width: 40px;
+    height: 40px;
+    margin: 8px 0;
+}
+
+.import-loading-text {
+    margin-left: 15px;
+    align-self: center;
 }
