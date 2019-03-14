@@ -1,0 +1,138 @@
+.repo-nav{
+    width: 200px;
+    background: #3e6f802b;
+}
+
+.repo-nav-title{
+    font-size: 0.95em;
+    padding: 15px;
+    background: #b2cad0;
+    margin: 0;
+}
+
+.repo-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.deployment-status {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 15px 15px;
+}
+
+.deployment{
+    border: 0.5px dashed #415254;
+    border-radius: 15px;
+    padding: 12px;
+    margin-top: 20px;
+    margin-left: 25px;
+    width: 37%;
+    max-width: 330px;
+    letter-spacing: 0.2px;
+}
+
+.deployment-heading{
+    margin: 0px;
+    font-weight: 500;
+}
+
+.deployment-version{
+    color: black;
+    font-size: small;
+    margin-top: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.deployment-url{
+    color: black;
+    font-size: 0.8em;
+    margin-top: 13px;
+    overflow-wrap: break-word;
+}
+
+.deployment-url > a {
+    color: blue;
+    text-decoration: underline;
+}
+
+.deployment-pods{
+    color: black;
+    font-size: 0.8em;
+    margin-top: 13px;
+}
+
+.deployment-up {
+    background-image: linear-gradient(150deg, #2fa6b32e, #00986d2b);
+}
+
+.deployment-updating {
+    background-image: linear-gradient(150deg, #dae80b30, #d2c1162e);
+}
+
+.deployment-down {
+    background-image: linear-gradient(150deg, #d44c182b, #c11e1e30);
+
+}
+
+.promote {
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+.promote-left-icon {
+    margin: 0px 20px 0px 0px;
+}
+
+.promote-right-icon{
+    transform: rotate(270deg);
+    margin: 0px 0px 0px 20px;
+    height: 20px;
+}
+
+.promote-input-box{
+    width: 55px;
+    text-align: center;
+    padding: 7px 3px;
+    border: 0.5px solid;
+    border-radius: 5px 0px 0px 5px;
+    font-size: 0.85em;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+}
+
+.promote-button {
+    background-color: #2d8475cc;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.75em;
+    border: 0.5px solid black;
+    border-left: none;
+    padding: 0.5em 1em;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.promote-button:disabled {
+    background-color: #00000061;
+    color: #fff;
+    font-weight: 500;
+    cursor: auto;
+    font-size: 0.75em;
+    border: 0.5px solid black;
+    border-left: none;
+    padding: 0.5em 1em;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.version-arrow-icon {
+    height: 13px;
+    width: 13px;
+    margin: 0px 5px;
+}

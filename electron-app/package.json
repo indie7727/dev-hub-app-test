@@ -12,6 +12,7 @@
     "package": "webpack --config webpack.config.production.js && electron-packager . ReactAuth --platform=darwin --arch=all --overwrite"
   },
   "devDependencies": {
+    "@babel/plugin-transform-regenerator": "^7.3.4",
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
     "babel-plugin-stylus-compiler": "^1.4.0",
@@ -33,17 +34,23 @@
   "dependencies": {
     "auth0-lock": "^11.12.1",
     "autoprefixer-loader": "^3.2.0",
-    "electron": "^3.0.10",
+    "electron": "^4.0.7",
     "electron-is": "^3.0.0",
     "events": "^1.1.1",
     "json-loader": "^0.5.4",
     "jwt-decode": "^2.1.0",
     "node-emoji": "^1.8.1",
+    "node-pre-gyp": "^0.12.0",
     "node-sass": "^4.3.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-router": "^3.0.2",
+    "react-stepzilla": "^5.0.0",
     "sass-loader": "^4.1.1",
-    "xel": "0.0.166"
+    "whatwg-fetch": "^3.0.0",
+    "xel": "^0.0.198"
+  },
+  "browser": {
+    "fs": false
   }
 }

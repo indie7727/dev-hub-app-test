@@ -37,7 +37,7 @@ export default class NewProject extends Component {
       <div className="new-project">
         <h3 className="new-project-title"> Add new project </h3>
         <div className="import-project-input-form">
-          <label>SCM URL<span className="aux">&#40;Make sure the repo has the <b className="bold">dev-hub.yaml</b>&#41;</span></label>
+          <label>SCM URL<span className="aux"></span></label>
           <input type="url" value={this.state.value} onChange={this.handleChange} pattern="https?://.+\..+/.+/.+" />
           <button disabled={!this.state.isFormValid} className="new-project-submit-button">
             {this.state.isFormValid ? <Link className="new-project-submit-link" to={{ pathname: '/import_repo', state: { scmUrl: this.state.value} }}>Add</Link> : "Add"}

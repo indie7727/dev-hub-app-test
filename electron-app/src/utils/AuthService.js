@@ -32,15 +32,28 @@ export default class AuthService extends EventEmitter {
   _doAuthentication(authResult) {
     // Saves the user token
     this.setToken(authResult.accessToken)
-    // navigate to the home route
-    hashHistory.replace('/')
 
     this.lock.getProfile(authResult.accessToken, (error, profile) => {
       if (error) {
         console.log('Error loading the Profile', error)
       } else {
-        console.log("profile", profile)
+        firebase.firestore().collection("users").doc(profile.nickname).set({
+          email: profile.email,
+          username: profile.nickname,
+          auth0Id: profile.sub,
+          name: profile.name
+        })
+        firebase.firestore().collection("userRepos").doc(profile.nickname).get().then((doc) => {
+          if(!doc.exists){
+            firebase.firestore().collection('userRepos').doc(profile.nickname).set({
+              repos: []
+            });
+          }
+        })
         this.setProfile(profile)
+        
+        // navigate to the home route
+        hashHistory.replace('/')
       }
     })
   }

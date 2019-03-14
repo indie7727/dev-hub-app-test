@@ -37,14 +37,14 @@
   margin-left: 0px;
 }
 
-x-button, x-label, x-box {
+.nav-button, .nav-label, .nav-box {
   background: #c1d7dc;
   border-radius: 10px;
   color: black;
   cursor: pointer;
 }
 
-x-button > x-box > * {
+.nav-button > .nav-box > * {
   margin: 0 5px 0 0;
 }
 
@@ -57,6 +57,87 @@ x-button > x-box > * {
   margin-top: 15%;
 }
 
-.auth0-lock-badge-bottom {
+.auth0-lock-badge-bottom, .auth0-lock-close-button {
   visibility: hidden;
+}
+
+.repo-heading {
+  color: white;
+}
+
+.repo-item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
+.repo-item:hover{
+  background:#ffa50036;
+}
+
+.repo-item-text:hover {
+  color: white;
+}
+
+.repo-item-text {
+  color: white;
+  padding: 10px 0px 10px 0px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 160px;
+  font-size: 0.9em;
+  text-align: left;
+  letter-spacing: 0.2px;
+  margin-bottom: 1px;
+}
+
+.repo-add-icon{
+  width: 20px;
+  height: 20px;
+  color: white;
+  margin: 2px 0px 0px 10px;
+  cursor: pointer;
+}
+
+.repo-main {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+  margin-bottom: 13px;
+  background: #16171730;
+  width: 100%;
+  padding: 0px 0px 2px 0px;
+  align-items: center;
+}
+
+.nav-circle-up{
+  background-color: #02ff00;
+}
+
+.nav-circle-updating{
+  background-color: yellow;
+}
+
+.nav-circle-down{
+  background-color: red;
+}
+
+.nav-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.7;
+  align-self: center;
+  margin-right: 9px;
+  margin-top: 1px;
+}
+
+.repo-item-selected {
+  background: #ffa500b5;
+}
+
+.repo-item-selected:hover{
+  background:#ffa500b5;
 }
