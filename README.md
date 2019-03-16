@@ -20,3 +20,4 @@ And in another terminal window run:
 ### Package app
 
 `npm run package`
+`zip -r -y dev-hub-app.zip DevHub-darwin-x64/DevHub.app`
