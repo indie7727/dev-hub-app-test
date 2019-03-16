@@ -1,7 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
-import AuthService from '../../utils/AuthService'
-var emoji = require('node-emoji')
 
 export default class Home extends Component {
   constructor(props, context) {
@@ -13,7 +10,7 @@ export default class Home extends Component {
       <div className="home">
         <div className="home--features">
           <h2>Welcome to Dev Hub!</h2>
-          <h1>{emoji.get(':wave:')}</h1>
+          <img className='waving-hand-emoji' src='images/hand-wave.png'></img>
         </div>
       </div>
     )

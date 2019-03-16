@@ -9,7 +9,7 @@
     "watch": "webpack-dev-server --hot",
     "electron-rebuild": "electron-rebuild",
     "build": "webpack",
-    "package": "webpack --config webpack.config.production.js && electron-packager . ReactAuth --platform=darwin --arch=all --overwrite"
+    "package": "webpack --config webpack.config.production.js && electron-packager . DevHub --platform=darwin --arch=all --overwrite"
   },
   "devDependencies": {
     "@babel/plugin-transform-regenerator": "^7.3.4",

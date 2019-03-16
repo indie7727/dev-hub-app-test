@@ -1,4 +1,4 @@
-var backendBaseUrl = "https://dev-hub-server-staging.k8.devfactory.com"
+var backendBaseUrl = "https://dev-hub-server.k8.devfactory.com"
 var backendAddonsUrl = backendBaseUrl + "/api/addons/"
 var backendImportUrl = backendBaseUrl + "/api/onboard/"
 var adminCheckUrl = backendBaseUrl + "/api/admin_access_check/"
