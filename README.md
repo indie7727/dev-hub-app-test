@@ -5,10 +5,6 @@
 
 `npm install`
 
-### Update creds
-
-Duplicate the `config-template.js` to `config.js` and add Auth0 credentials.
-
 ### Build app
 
 `npm run build`
