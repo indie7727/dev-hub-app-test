@@ -34,7 +34,7 @@ export default class EditRepo extends Component {
       {name: 'Basic Info', component: <StepOne auth={this.props.auth} getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}}/>},
       {name: 'Env Vars', component: <StepTwo getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}}/>},
       {name: 'Port Mapping', component: <StepThree getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}}/>},
-      {name: 'Addons', component: <StepFour auth={this.props.auth} parentState={this.state} getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}}/>},
+      {name: 'Addons', component: <StepFour edit={true} auth={this.props.auth} parentState={this.state} getStore={() => (this.getStore())} updateStore={(u) => {this.updateStore(u)}}/>},
     ] 
     if(this.state.loading){
       return <x-throbber></x-throbber>
