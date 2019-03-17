@@ -1,45 +1,21 @@
 import React, { Component } from 'react'
 import StepZilla from "react-stepzilla";
-import { StepOne } from './import-repo-steps/StepOne'
-import { StepTwo } from './import-repo-steps/StepTwo'
-import { StepThree } from './import-repo-steps/StepThree'
-import { StepFour } from './import-repo-steps/StepFour'
-import {backendAddonsUrl} from '../../../constants'
+import { StepOne } from './import-repo/import-repo-steps/StepOne'
+import { StepTwo } from './import-repo/import-repo-steps/StepTwo'
+import { StepThree } from './import-repo/import-repo-steps/StepThree'
+import { StepFour } from './import-repo/import-repo-steps/StepFour'
 import 'whatwg-fetch'
 
-export default class ImportRepo extends Component {
+export default class EditRepo extends Component {
   constructor(props) {
     super(props);
     this.state = {loading: false};
-    this.title = "Import Repository"
-    this.Store = {
-      scmUrl: '',
-      replicaCount: 1,
-      stagingEnvVars: [{key:'', value:''}],
-      productionEnvVars: [{key:'', value:''}],
-      previewEnvVars: [{key:'', value:''}],
-      portMapping: [{port:'', protocol:'HTTP', public: true, url: ""}],
-      addons: []
-    };
+    this.title = "Edit Repository"
+    this.Store = {};
   }
 
   componentWillMount() {
-    window.fetch(backendAddonsUrl)
-    .then(response => response.json())
-    .then(json => {
-      this.Store.addons = json.addons
-      for (var i = 0; i < this.Store.addons.length; i++)
-        this.Store.addons[i].selected = false
-      for (var i = 0; i < this.Store.addons.length; i++)
-        for (var j = 0; j < this.Store.addons[i].args.length; j++)
-        {
-          var arg_name = this.Store.addons[i].args[j]
-          this.Store.addons[i].args[j] = {
-            key: arg_name,
-            value: ""
-          }
-        }
-    })
+    this.Store = this.props.location.state.store
   }
 
   componentWillUnmount() {}

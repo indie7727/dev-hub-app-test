@@ -4,10 +4,23 @@
 }
 
 .repo-nav-title{
-    font-size: 0.95em;
-    padding: 15px;
+    display: flex;
+    justify-content: center;
     background: #b2cad0;
-    margin: 0;
+    align-items: center;
+    padding: 5px 0px;
+}
+
+.repo-nav-title-text{
+    font-size: 0.95em;
+    padding: 0px 0px 0px 10px;
+    word-break: break-word;
+}
+
+.repo-nav-edit-icon{
+    width: 17px;
+    height: 17px;
+    margin: 0px 10px;
 }
 
 .repo-content {
@@ -135,4 +148,43 @@
     height: 13px;
     width: 13px;
     margin: 0px 5px;
+}
+
+.import-loading-main {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    display: flex;
+}
+
+.import-throbber {
+    width: 40px;
+    height: 40px;
+    margin: 8px 0;
+}
+
+.import-loading-text {
+    margin-left: 15px;
+    align-self: center;
+}
+
+.import-failed-main{
+    margin-top: 33vh;
+}
+
+.import-failed-image{
+    width: 130px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.import-failed-text{
+    padding: 25px 0px 15px 0px;
+    font-weight: 600;
+    font-size: 1.8em;
+}
+
+.import-failed-reason{
+    color: black;
 }
