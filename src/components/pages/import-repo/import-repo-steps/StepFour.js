@@ -60,10 +60,10 @@ export class StepFour extends React.Component {
     firebase.firestore().collection("repos").doc(this.props.getStore().scmUrl.replace(/\//g, '+')).set({
       isImported: false,
       isImporting: true,
-      importReason: null,
       importData: this.props.getStore(),
       name: repoName,
-    })
+    }, { merge: true })
+
     firebase.firestore().collection('userRepos').doc(this.props.auth.getProfile().nickname).get().then((docSnapshot) => {
       if (docSnapshot.exists) {
           firebase.firestore().collection('userRepos').doc(this.props.auth.getProfile().nickname).update({
@@ -82,14 +82,15 @@ export class StepFour extends React.Component {
         });
       }
     });
+
     fetch(backendImportUrl,
     {
         method: "POST",
         body: JSON.stringify(Object.assign(this.props.getStore(), 
-                                           {auth0Id: this.props.auth.getProfile().sub},
-                                           {scmUsername: this.props.auth.getProfile().nickname}))
+                                           {auth0Id: this.props.auth.getProfile().sub,
+                                            scmUsername: this.props.auth.getProfile().nickname,
+                                            isEdit: this.props.edit ? true: false}))
     })
-
   }
 
   render () {   
