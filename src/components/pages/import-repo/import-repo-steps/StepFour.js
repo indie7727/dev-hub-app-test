@@ -101,7 +101,20 @@ export class StepFour extends React.Component {
             {this.state.addons.map((data, index) => 
               <div className="addon-box-outer">
                 <x-box class="addon-box">
-                  <x-switch onClick={this.handleToggle.bind(this)} skin="big" id={index}></x-switch>
+                  {data.selected ? 
+                  <x-switch 
+                    onClick={this.handleToggle.bind(this)} 
+                    skin="big" 
+                    id={index}
+                    toggled
+                  >
+                  </x-switch> : 
+                  <x-switch 
+                    onClick={this.handleToggle.bind(this)} 
+                    skin="big" 
+                    id={index}
+                  >
+                  </x-switch>}
                   <div style={{display: "flex", flexDirection: "column"}}>
                     <x-label class="addon-label">
                       <x-box vertical>
@@ -132,8 +145,9 @@ export class StepFour extends React.Component {
         <Link 
           to={{ 
             pathname: "repos/" + this.processScmUrl(this.props.getStore().scmUrl).replace(/\//g, '+'),
-            state: {Store: this.props.getStore() }
+            state: {Store: this.props.getStore() },
           }} 
+          params={{auth: this.props.auth}}
           style={{float: 'left'}}
           onClick={this.storeInDbAndCallOnboardAPI.bind(this)}
         >
