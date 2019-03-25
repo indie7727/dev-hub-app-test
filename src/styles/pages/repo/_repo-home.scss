@@ -1,28 +1,3 @@
-.repo-nav{
-    width: 200px;
-    background: #3e6f802b;
-}
-
-.repo-nav-title{
-    display: flex;
-    justify-content: center;
-    background: #b2cad0;
-    align-items: center;
-    padding: 5px 0px;
-}
-
-.repo-nav-title-text{
-    font-size: 0.95em;
-    padding: 0px 0px 0px 10px;
-    word-break: break-word;
-}
-
-.repo-nav-edit-icon{
-    width: 17px;
-    height: 17px;
-    margin: 0px 10px;
-}
-
 .repo-content {
     display: flex;
     flex-direction: column;
@@ -150,10 +125,10 @@
 }
 
 .import-loading-main {
-    position: absolute;
-    top: 43%;
-    left: 50%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .import-throbber {

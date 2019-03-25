@@ -48,7 +48,7 @@
   margin: 0 5px 0 0;
 }
 
-.new-project-nav-link {
+.new-repo-nav-link {
   cursor: auto;
   outline: none;
 }
@@ -100,7 +100,7 @@
   cursor: pointer;
 }
 
-.repo-main {
+.nav-repo-main {
   justify-content: center;
   display: flex;
   flex-direction: row;
@@ -140,4 +140,26 @@
 
 .repo-item-selected:hover{
   background:#ffa500b5;
+}
+
+.all-issues-nav-link{
+  background: #16171730;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 5px;
+}
+
+.all-issues-heading{
+  color: white;
+  letter-spacing: 0.2px;
+}
+
+.all-issues-icon{
+  color: white;
+  margin-right: 7px;
+  width: 20px;
+  height: 20px;
 }

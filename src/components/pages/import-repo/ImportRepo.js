@@ -4,7 +4,7 @@ import { StepOne } from './import-repo-steps/StepOne'
 import { StepTwo } from './import-repo-steps/StepTwo'
 import { StepThree } from './import-repo-steps/StepThree'
 import { StepFour } from './import-repo-steps/StepFour'
-import {backendAddonsUrl} from '../../../constants'
+import {addonsUrl} from '../../../constants'
 import 'whatwg-fetch'
 
 export default class ImportRepo extends Component {
@@ -24,7 +24,7 @@ export default class ImportRepo extends Component {
   }
 
   componentWillMount() {
-    window.fetch(backendAddonsUrl)
+    window.fetch(addonsUrl)
     .then(response => response.json())
     .then(json => {
       this.Store.addons = json.addons

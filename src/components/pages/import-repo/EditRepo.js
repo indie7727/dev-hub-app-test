@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import StepZilla from "react-stepzilla";
-import { StepOne } from './import-repo/import-repo-steps/StepOne'
-import { StepTwo } from './import-repo/import-repo-steps/StepTwo'
-import { StepThree } from './import-repo/import-repo-steps/StepThree'
-import { StepFour } from './import-repo/import-repo-steps/StepFour'
+import { StepOne } from './import-repo-steps/StepOne'
+import { StepTwo } from './import-repo-steps/StepTwo'
+import { StepThree } from './import-repo-steps/StepThree'
+import { StepFour } from './import-repo-steps/StepFour'
 import 'whatwg-fetch'
 
 export default class EditRepo extends Component {

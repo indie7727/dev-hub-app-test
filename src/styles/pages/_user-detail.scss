@@ -1,0 +1,47 @@
+.user-detail-contribution-chart{
+    padding: 5% 12%;
+    font-size: 0.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.react-calendar-heatmap{
+    border: 1px dashed #00000030;
+    border-radius: 5px;
+    padding: 20px 40px 0px 20px;
+}
+
+.user-detail-contributions-title{
+    align-self: flex-start;
+    margin-bottom: 10px;
+}
+
+[class^='color-scale-'] {
+    fill: #1e6823;  
+}
+
+[class^='color-scale-0.'] {
+    fill: #d6e685ba;  
+}
+[class^='color-scale-1.'] {
+    fill: #d6e685;  
+}
+[class^='color-scale-2.'] {
+    fill: #8cc665;  
+}
+[class^='color-scale-3.'] {
+    fill: #44a340;  
+}
+[class^='color-scale-4.'] {
+    fill: #2f8c36;  
+}
+[class^='color-scale-5.'] {
+    fill: #1e6823;  
+}
+
+.react-calendar-heatmap .color-scale-0 { fill: #ebedf0; }
+.react-calendar-heatmap .color-scale-1 { fill: #d6e685; }
+.react-calendar-heatmap .color-scale-2 { fill: #8cc665; }
+.react-calendar-heatmap .color-scale-3 { fill: #44a340; }
+.react-calendar-heatmap .color-scale-4 { fill: #2f8c36; }
+.react-calendar-heatmap .color-scale-5 { fill: #1e6823; }

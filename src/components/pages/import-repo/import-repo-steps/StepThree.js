@@ -39,7 +39,6 @@ export class StepThree extends React.Component {
       portMapping: this.state.portMapping.concat([{port:'', protocol:'HTTP', public: true, url: ""}])
     })
   }
-    
 
   handleInputChange(event){
     var info = event.target.name.split("-") // index-key
@@ -47,6 +46,7 @@ export class StepThree extends React.Component {
     this.props.updateStore({portMapping: this.state.portMapping});
     this.setState({portMapping: this.state.portMapping})
   }
+  
   render () {
     return (
       <div className="port-mapping-main">
