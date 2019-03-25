@@ -10,7 +10,12 @@ export default class RepoDetail extends Component {
       version: this.props.repoData.stagingData ? this.props.repoData.stagingData.version : ""
     }
   }
- 
+  
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.props.repoData !== prevProps.repoData)
+      this.setState({version: this.props.repoData.stagingData ? this.props.repoData.stagingData.version : ""})
+  }
+
   handleInputChange(event){
     this.setState({version: event.target.value})
   }
