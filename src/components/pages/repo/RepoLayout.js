@@ -35,9 +35,6 @@ class RepoLayout extends Component {
           });
         });
     })
-  }
-    
-  componentDidMount(){
     const db = firebase.firestore();
     db.collection("repos").doc(this.props.params.repoId).onSnapshot((doc) => {      
         this.setState({
@@ -46,16 +43,21 @@ class RepoLayout extends Component {
         });
     })
   }
+    
+  componentDidMount(){
+    
+  }
 
   render() {
-    let children = null;
-    if (this.props.children) {
-      children = React.cloneElement(this.props.children, {
+    const { children } = this.props;
+
+    const childrenWithProps = React.Children.map(children, child =>
+      React.cloneElement(child, {
         auth: this.props.route.auth,
         repoData: this.state.repoData,
         repoId: this.state.repoId,
       })
-    }
+    );
     
     return (
         <div className="repo-layout">
@@ -65,7 +67,7 @@ class RepoLayout extends Component {
               repoId={this.state.repoId} 
             />
             <div className="repo-main">
-                {children}
+                {childrenWithProps}
             </div>
         </div>
     )

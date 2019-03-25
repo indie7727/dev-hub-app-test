@@ -169,9 +169,12 @@ export default class IssueDetail extends Component {
             <div className="issue-detail-badge issue-detail-issue-link-badge"> 
               <span className="issue-detail-issue">        
                 <img className='issue-detail-issue-icon' src='images/git-issue.png'></img>
-                <a className="issue-detail-issue-link" href={issueData.url} target="_blank">
-                  {issueData.url.split('/')[issueData.url.split('/').length - 1]}
-                </a> 
+                {issueData.url ?
+                  <a className="issue-detail-issue-link" href={issueData.url} target="_blank">
+                    {issueData.url.split('/')[issueData.url.split('/').length - 1]}
+                  </a> :
+                  <span style={{fontSize: "0.95em"}}>Creating...</span>
+                }
               </span>
             </div>  
             {issueData.branch === "N/A" ? <div></div> :
