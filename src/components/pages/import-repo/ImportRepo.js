@@ -34,10 +34,7 @@ export default class ImportRepo extends Component {
         for (var j = 0; j < this.Store.addons[i].args.length; j++)
         {
           var arg_name = this.Store.addons[i].args[j]
-          this.Store.addons[i].args[j] = {
-            key: arg_name,
-            value: ""
-          }
+          this.Store.addons[i].args[j] = Object.assign(arg_name, {value: ""})            
         }
     })
   }

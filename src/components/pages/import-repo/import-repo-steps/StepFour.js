@@ -10,7 +10,6 @@ export class StepFour extends React.Component {
       addons: props.getStore().addons
     };
     this._validateOnDemand = true; // this flag enables onBlur validation as user fills forms
-
     this.validationCheck = this.validationCheck.bind(this);
     this.isValidated = this.isValidated.bind(this);
   }
@@ -41,6 +40,18 @@ export class StepFour extends React.Component {
     this.state.addons[info[0]].args[info[1]].value = event.target.value
     this.props.updateStore({addons: this.state.addons});
     this.setState({addons: this.state.addons})
+  }
+
+  handleFileChange(event){
+    var fileReader = new FileReader()
+    var info = event.target.name.split("-")
+
+    fileReader.onload = e => {
+      this.state.addons[info[0]].args[info[1]].value = e.target.result
+      this.props.updateStore({addons: this.state.addons});
+      this.setState({addons: this.state.addons})
+    }
+    fileReader.readAsText(event.target.files[0])
   }
 
   processScmUrl(scmUrl){
@@ -113,19 +124,39 @@ export class StepFour extends React.Component {
                         <span className="addon-description">{data.description}</span>
                       </x-box>
                     </x-label>
-                    <div style={{display: "flex", flexDirection: "row"}}>
-                      {data.selected && data.args.length > 0 ? data.args.map((addonInput, idx) => 
-                        <span className="addon-input-text">{addonInput.key}:</span>) : (<div></div>)
-                      }
-                      {data.selected && data.args.length > 0 ? data.args.map((addonInput, idx) => 
-                        <input 
-                            name={index + "-" + idx}
-                            value={addonInput.value}
-                            onChange={this.handleInputChange.bind(this)}
-                            className="addon-input-box"
-                        >
-                        </input>) : (<div></div>)
-                      }
+                    <div style={{display: "flex", flexDirection: "row", marginTop: "10px"}}>
+                      <div className="addons-text-main">
+                        {data.selected && data.args.length > 0 ? data.args.map((addonInput, idx) => 
+                          <span className="addon-input-text">{addonInput.key}:</span>) : (<div></div>)
+                        }
+                      </div>
+                      <div style={{display: "flex", flexDirection: "column", width: "40.5%"}}>
+                        {data.selected && data.args.length > 0 ? data.args.map((addonInput, idx) =>
+                          addonInput.type === "text" ?
+                            <input 
+                              name={index + "-" + idx}
+                              value={addonInput.value}
+                              onChange={this.handleInputChange.bind(this)}
+                              className="addon-text-input-box"
+                            >
+                            </input> : (addonInput.type === "file" ?
+                            <input 
+                              name={index + "-" + idx}
+                              onChange={this.handleFileChange.bind(this)}
+                              className="addon-file-input-box"
+                              type="file"
+                            >
+                            </input> : <div></div>)
+                          ) : (<div></div>)
+                        }
+                      </div>
+                      <div className="addons-link-main">
+                        {data.selected && data.args.length > 0 ? data.args.map((addonInput, idx) => 
+                          addonInput.link ? 
+                            <a href={addonInput.link} target="_blank" className="addon-input-link">Sample</a>: 
+                            <div className="addon-input-link"></div>) : (<div></div>)
+                        }
+                      </div>
                     </div>
                   </div>
                 </x-box>
