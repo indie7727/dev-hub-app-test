@@ -215,14 +215,40 @@ export default class IssueDetail extends Component {
               >
                 Start Working
               </button> : (issueData.status === "In Progress" ?
-              <div style={{display: "flex", flexDirection: "column"}}>
-                <button 
-                  className="issue-detail-button issue-detail-button-issue-completed btn btn-prev btn-primary btn-lg pull-right"
-                  onClick={this.doneWithIssue.bind(this)}
-                >
-                  Issue Completed
-                </button> 
-              </div>: <div></div>)
+                (issueData.type === "Development" ?
+                <div style={{display: "flex", flexDirection: "column"}}>
+                  <div className="issue-detail-git-helper-command">
+                    <h5 className="issue-detail-git-helper-command-header">Git helper commands</h5>
+                    {issueData.branch === "Creating..." ?
+                      <div className="issue-detail-git-helper-command-text">git fetch && git checkout (branchname)</div> :
+                      <div className="issue-detail-git-helper-command-text">git fetch && git checkout {issueData.branch}</div>
+                    }
+                  </div>
+                  <div className="issue-detail-devspaces-helper-command">
+                    <h5 className="issue-detail-devspaces-helper-command-header">Devspaces helper commands</h5>
+                    <div className="issue-detail-devspaces-helper-command-text">
+                      devspaces create
+                    </div>
+                    <div className="issue-detail-devspaces-helper-command-text">
+                      devspaces bind {this.props.repoData.devspaceName ? this.props.repoData.devspaceName: "<devspace name>"}
+                    </div>
+                    <div className="issue-detail-devspaces-helper-command-text">
+                      devspaces exec {this.props.repoData.devspaceName ? this.props.repoData.devspaceName: "<devspace name>"}
+                    </div>
+                  </div>
+                  <button 
+                    className="issue-detail-button issue-detail-button-issue-completed btn btn-prev btn-primary btn-lg pull-right"
+                    onClick={this.doneWithIssue.bind(this)}
+                  >
+                    Work Completed
+                  </button> 
+              </div>: 
+              <button 
+                className="issue-detail-button issue-detail-button-issue-completed btn btn-prev btn-primary btn-lg pull-right"
+                onClick={this.doneWithIssue.bind(this)}
+              >
+                Work Completed
+              </button>) :<div></div>)
             }
           </div>
         </div>

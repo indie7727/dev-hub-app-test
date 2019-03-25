@@ -29,6 +29,8 @@ export default class AllIssues extends Component {
         Object.keys(doc.data().repos).map((key) => { 
             db.collection("repos").doc(key).onSnapshot((doc) => {      
                 var repoData = doc.data();
+                if(!repoData.issues)
+                    return
                 Object.keys(repoData.issues).map((issueId) => {
                     var issueData = repoData.issues[issueId]
                     if(issueData.status === "Closed")
