@@ -11,8 +11,13 @@ import Layout from './Layout'
 import Home from './components/pages/Home'
 import NewProject from './components/pages/NewProject'
 import ImportRepo from './components/pages/import-repo/ImportRepo'
-import EditRepo from './components/pages/EditRepo'
-import Repo from './components/pages/Repo'
+import EditRepo from './components/pages/import-repo/EditRepo'
+import RepoLayout from './components/pages/repo/RepoLayout'
+import RepoDetail from './components/pages/repo/RepoDetail'
+import AllIssues from './components/pages/issue/AllIssues'
+import IssueDetail from './components/pages/issue/IssueDetail'
+import CreateIssue from './components/pages/issue/CreateIssue'
+import UserDetail from './components/pages/UserDetail'
 
 const auth = new AuthService(Config.auth.clientId, Config.auth.domain)
 
@@ -21,9 +26,15 @@ render((
     <Route path="/" component={Layout} auth={auth}>
       <IndexRoute component={Home} />
       <Route path="/new_project" component={NewProject} />
-      <Route path="/import_repo" component={ImportRepo} auth={auth} />
-      <Route path="/edit_repo" component={EditRepo} auth={auth} />
-      <Route path="/repos/:repoId" component={Repo} auth={auth} />
+      <Route path="/import_repo" component={ImportRepo} />
+      <Route path="/edit_repo" component={EditRepo} />
+      <Route path="/all_issues" component={AllIssues} />
+      <Route path="/user_detail" component={UserDetail} />
+      <Route path="/repos/:repoId" component={RepoLayout} auth={auth}>
+        <IndexRoute component={RepoDetail} />
+        <Route path="/repos/:repoId/issues/:issueId" component={IssueDetail} />
+        <Route path="/repos/:repoId/add_issue" component={CreateIssue} />
+      </Route>
     </Route>
   </Router>
 ), document.getElementById('app'));

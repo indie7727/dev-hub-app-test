@@ -1,0 +1,170 @@
+.issue-detail-main{
+    display: flex;
+    margin: 8.3% 7%;
+}
+
+.issue-detail-content{
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    margin-top: 30px;
+}
+
+.issue-detail-events{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-left: 5%;
+}
+
+.issue-detail-title{
+    text-align: left;
+    color: black;
+    font-size: 1.6em;
+    font-weight: 500;
+    margin: 20px 0px;
+}
+
+.issue-detail-description{
+    text-align: left;
+    color: black;
+    font-size: 0.85em;
+    line-height: 1.15em;
+}
+
+.issue-detail-badges{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    font-size: 0.95em;
+}
+
+.issue-detail-badge{
+    color: black;
+    background: #0000000a;
+    padding: 8px;
+    border-radius: 5px;
+    align-self: center;
+}
+
+.issue-detail-value-badge, .issue-detail-branch-badge, .issue-detail-pr-badge, .issue-detail-status-badge{
+    margin-left: 10px;
+}
+
+.issue-detail-status-badge-in-progress{
+    background: #ffd90099;
+}
+
+.issue-detail-status-badge-pending-pr-merge{
+    background: #0900ff52;
+}
+
+.issue-detail-status-badge-closed{
+    background: #ff000057;
+}
+
+.issue-detail-buttons{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+  
+.issue-detail-button{
+    background-color: #30849e;
+    color: #fff;
+    height: 38px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 0.5em;
+    float: left;
+    margin-top: 5px;
+}
+
+.vertical-timeline-element-icon{
+    height: 15px !important;
+    width: 15px !important;
+    margin-left: 12px !important;
+    background: rgb(60, 148, 165) !important;
+    box-shadow: 0px 0px 1px 2px #000000 !important;
+}
+
+.vertical-timeline-element-content{
+    font-size: 0.85em !important;
+    color: black;
+    background: none;
+    display: flex;
+    border-radius: 5px !important;
+    box-shadow: none;
+    padding: 10px;
+    margin-top: -14px;
+    flex-direction: column;
+    float: left;
+    text-align: left;
+    background: #00000008;
+    margin-left: 55px;
+}
+
+.vertical-timeline-element-date{
+    padding: 8px 0px 0px 0px !important;
+    text-align: left;
+    font-size: 0.85em !important;
+}
+
+.vertical-timeline::before{
+    width: 2px;
+    background: #0000001a;
+}
+
+.vertical-timeline-element-content::before {
+    border: 5px solid transparent;
+    border-right: 5px solid #00000063;
+}
+
+.vertical-timeline-element {
+    margin: 3em 0 !important; 
+}
+
+.issue-detail-vertical-timeline{
+    height: 72vh;
+    overflow: scroll;
+}
+
+.vertical-timeline {
+    padding: 0 !important;
+}
+
+.issue-detail-in-progress-branch, .issue-detail-pr, .issue-detail-issue{
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+}
+
+.issue-detail-button-start-working{
+    width: 130px;
+}
+
+.issue-detail-button-issue-completed{
+    width: 150px;
+}
+
+.issue-detail-in-progress-branch-link, .issue-detail-pr-link, .issue-detail-issue-link{
+    color: blue;
+    text-decoration: underline;
+}
+
+.issue-detail-in-progress-branch-icon{
+    width: 16px;
+    margin-right: 3px; 
+}
+
+.issue-detail-pr-icon{
+    width: 11px;
+    margin-right: 5px; 
+}
+
+.issue-detail-issue-icon{
+    width: 14px;
+    margin-right: 5px; 
+}

@@ -41,14 +41,8 @@ export default class AuthService extends EventEmitter {
           email: profile.email,
           username: profile.nickname,
           auth0Id: profile.sub,
-          name: profile.name
-        })
-        firebase.firestore().collection("userRepos").doc(profile.nickname).get().then((doc) => {
-          if(!doc.exists){
-            firebase.firestore().collection('userRepos').doc(profile.nickname).set({
-              repos: []
-            });
-          }
+          name: profile.name,
+          contributions: {}
         })
         this.setProfile(profile)
         

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router';
-import {backendImportUrl} from '../../../../constants'
+import {importUrl} from '../../../../constants'
 
 export class StepFour extends React.Component {
   constructor(props) {
@@ -54,7 +54,7 @@ export class StepFour extends React.Component {
   storeInDbAndCallOnboardAPI(){
     var scmUrl = this.props.getStore().scmUrl
     this.props.updateStore({scmUrl: this.processScmUrl(scmUrl)});
-    var scmUrlSplit = scmUrl.split('/')
+    var scmUrlSplit = this.processScmUrl(scmUrl).split('/')
     var repoName = scmUrlSplit[scmUrlSplit.length - 1].split('.')[0]
 
     firebase.firestore().collection("repos").doc(this.props.getStore().scmUrl.replace(/\//g, '+')).set({
@@ -64,26 +64,16 @@ export class StepFour extends React.Component {
       name: repoName,
     }, { merge: true })
 
-    firebase.firestore().collection('userRepos').doc(this.props.auth.getProfile().nickname).get().then((docSnapshot) => {
-      if (docSnapshot.exists) {
-          firebase.firestore().collection('userRepos').doc(this.props.auth.getProfile().nickname).update({
-            repos: firebase.firestore.FieldValue.arrayUnion({
-              name: repoName,
-              id: this.props.getStore().scmUrl.replace(/\//g, '+')
-            })
-          });
+    firebase.firestore().collection("userRepos").doc(this.props.auth.getProfile().nickname).set({
+      repos: {
+        [this.props.getStore().scmUrl.replace(/\//g, '+')] :{
+          name: repoName,
+          permission: "push"
+        }
       }
-      else {
-        firebase.firestore().collection('userRepos').doc(this.props.auth.getProfile().nickname).set({
-          repos: [{
-            name: repoName,
-            id: this.props.getStore().scmUrl.replace(/\//g, '+')
-          }]
-        });
-      }
-    });
+    }, { merge: true })
 
-    fetch(backendImportUrl,
+    fetch(importUrl,
     {
         method: "POST",
         body: JSON.stringify(Object.assign(this.props.getStore(), 
@@ -146,9 +136,7 @@ export class StepFour extends React.Component {
         <Link 
           to={{ 
             pathname: "repos/" + this.processScmUrl(this.props.getStore().scmUrl).replace(/\//g, '+'),
-            state: {Store: this.props.getStore() },
           }} 
-          params={{auth: this.props.auth}}
           style={{float: 'left'}}
           onClick={this.storeInDbAndCallOnboardAPI.bind(this)}
         >

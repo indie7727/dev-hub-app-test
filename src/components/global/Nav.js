@@ -37,14 +37,15 @@ class Nav extends Component {
         return
       var userRepos = doc.data().repos;
       var repos = [];
-      for(var i=0; i < userRepos.length; i++){        
-          repos.push({
-            name: userRepos[i].name,
-            id: userRepos[i].id,
-            isProdUp: false,
-            isProdUpdating: false
-          });
-      }
+
+      Object.keys(userRepos).map((key) => {   
+        repos.push({
+          name: userRepos[key].name,
+          id: key,
+          isProdUp: false,
+          isProdUpdating: false
+        });
+      })
       this.setState({repos: repos});
       
       for(var i=0;i<repos.length; i++){
@@ -63,14 +64,21 @@ class Nav extends Component {
     return (
       <div className="nav">
         <div className="nav--wrapper">
-          <div className="nav--user-details">
-            <img className="user-avatar" src={this.state.profile.picture} />
-            <h5>{this.state.profile.nickname}</h5>
-          </div>
+          <Link to='/user_detail'>
+            <div className="nav--user-details">
+              <img className="user-avatar" src={this.state.profile.picture} />
+              <h5>{this.state.profile.nickname}</h5>
+            </div>
+          </Link>
           
-          <div className="repo-main">
+          <Link className="all-issues-nav-link" to='/all_issues'>
+            <x-icon class="all-issues-icon" name="reorder" iconset="node_modules/xel/images/icons.svg"></x-icon>
+            <h4 className='all-issues-heading'>Issues</h4>
+          </Link>
+
+          <div className="nav-repo-main">
             <h4 className='repo-heading'>Repos</h4>
-            <Link className="new-project-nav-link" to='/import_repo'>
+            <Link className="new-repo-nav-link" to='/import_repo'>
                 <x-icon class="repo-add-icon" name="add-circle-outline" iconset="node_modules/xel/images/icons.svg"></x-icon>
             </Link>
           </div>

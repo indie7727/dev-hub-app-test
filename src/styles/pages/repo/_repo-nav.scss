@@ -1,0 +1,94 @@
+.repo-nav{
+    width: 250px;
+    background: #3e6f802b;
+}
+
+.repo-nav-title{
+    display: flex;
+    justify-content: center;
+    background: #b2cad0a3;
+    align-items: center;
+    padding: 5px 0px;
+}
+
+.repo-nav-title-text{
+    font-size: 0.95em;
+    padding: 0px 0px 0px 10px;
+    word-break: break-word;
+}
+
+.repo-nav-edit-icon{
+    width: 17px;
+    height: 17px;
+    margin: 0px 10px;
+}
+
+.repo-nav-issue-main {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+    background: #b2cad0a3;
+    width: 100%;
+    padding: 0px 0px 2px 0px;
+    align-items: center;
+}
+
+.issue-heading{
+    color: black;
+}
+
+.new-issue-nav-link{
+    cursor: auto;
+    outline: none;
+}
+
+.issue-add-icon{
+    width: 20px;
+    height: 20px;
+    color: black;
+    margin: 2px 0px 0px 7px;
+    cursor: pointer;
+}
+
+.issue-item {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.issue-item-content:hover {
+    background: #bacc4138;
+}
+
+.issue-item-content {
+    color: white;
+    padding: 15px;
+    text-align: left;
+    letter-spacing: 0.2px;
+    width: 100%;
+    border-bottom: 0.5px dashed #0000008c;
+}
+
+.issue-item-selected {
+    background: #d6cc2a82;
+}
+
+.issue-item-selected:hover{
+    background:#d6cc2a82;
+}
+
+.issue-item-title{
+    font-size: 0.85em;
+    color: black;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+
+.issue-item-description{
+    font-size: 0.7em;
+    color: black;
+    margin-top: 5px;
+    line-height: 1.2em;
+}

@@ -12,8 +12,8 @@ function createWindow () {
 
   if(process.env.ENV === 'development')
     win = new BrowserWindow({
-      width: 900,
-      height: 650,
+      width: 1200,
+      height: 950,
       minHeight: 450,
       minWidth: 870,
     })

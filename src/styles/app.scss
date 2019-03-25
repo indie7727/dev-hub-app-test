@@ -7,6 +7,12 @@
 @import 'pages/home';
 @import 'pages/new-project';
 @import 'pages/import-repo';
-@import 'pages/repos';
+@import 'pages/repo/repo-home';
+@import 'pages/repo/repo-layout';
+@import 'pages/repo/repo-nav';
+@import 'pages/issue/issue-detail';
+@import 'pages/issue/create-issue';
+@import 'pages/issue/all-issues';
+@import 'pages/user-detail';
 
 @import 'components/nav';
