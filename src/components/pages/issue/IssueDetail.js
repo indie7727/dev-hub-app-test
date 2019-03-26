@@ -156,15 +156,18 @@ export default class IssueDetail extends Component {
       <div className="issue-detail-main">
         <div className="issue-detail-content">
           <div className="issue-detail-title">{issueData.title}</div>
-          <div className="issue-detail-description">{issueData.description}</div>
-          <div className="issue-detail-badges">
+          <div className="issue-detail-title-badges">
             <div className="issue-detail-badge issue-detail-time-badge"> 
               {this.getTimeEstimateString(issueData.timeEstimateHours, issueData.timeEstimateMins)} 
             </div>
             <div className="issue-detail-badge issue-detail-value-badge">
               {"$".repeat(issueData.value / 25 + 1)} 
             </div>
+            <div className={"issue-detail-badge issue-detail-status-badge issue-detail-status-badge-" + issueData.status.toLowerCase().replace(/ /g,"-")}> 
+                {issueData.status}
+            </div> 
           </div>
+          <div className="issue-detail-description">{issueData.description}</div>
           <div className="issue-detail-badges">
             <div className="issue-detail-badge issue-detail-issue-link-badge"> 
               <span className="issue-detail-issue">        
@@ -203,9 +206,6 @@ export default class IssueDetail extends Component {
                 </span>
               </div>
             }
-            <div className={"issue-detail-badge issue-detail-status-badge issue-detail-status-badge-" + issueData.status.toLowerCase().replace(/ /g,"-")}> 
-                {issueData.status}
-            </div> 
           </div>
           <div className="issue-detail-buttons">
             {issueData.status === "To-Do" ? 
