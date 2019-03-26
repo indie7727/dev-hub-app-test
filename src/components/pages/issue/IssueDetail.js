@@ -230,6 +230,9 @@ export default class IssueDetail extends Component {
                       devspaces create
                     </div>
                     <div className="issue-detail-devspaces-helper-command-text">
+                      devspaces start {this.props.repoData.devspaceName ? this.props.repoData.devspaceName: "<devspace name>"}
+                    </div>
+                    <div className="issue-detail-devspaces-helper-command-text">
                       devspaces bind {this.props.repoData.devspaceName ? this.props.repoData.devspaceName: "<devspace name>"}
                     </div>
                     <div className="issue-detail-devspaces-helper-command-text">
