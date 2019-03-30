@@ -156,15 +156,18 @@ export default class IssueDetail extends Component {
       <div className="issue-detail-main">
         <div className="issue-detail-content">
           <div className="issue-detail-title">{issueData.title}</div>
-          <div className="issue-detail-description">{issueData.description}</div>
-          <div className="issue-detail-badges">
+          <div className="issue-detail-title-badges">
             <div className="issue-detail-badge issue-detail-time-badge"> 
               {this.getTimeEstimateString(issueData.timeEstimateHours, issueData.timeEstimateMins)} 
             </div>
             <div className="issue-detail-badge issue-detail-value-badge">
               {"$".repeat(issueData.value / 25 + 1)} 
             </div>
+            <div className={"issue-detail-badge issue-detail-status-badge issue-detail-status-badge-" + issueData.status.toLowerCase().replace(/ /g,"-")}> 
+                {issueData.status}
+            </div> 
           </div>
+          <div className="issue-detail-description">{issueData.description}</div>
           <div className="issue-detail-badges">
             <div className="issue-detail-badge issue-detail-issue-link-badge"> 
               <span className="issue-detail-issue">        
@@ -203,9 +206,6 @@ export default class IssueDetail extends Component {
                 </span>
               </div>
             }
-            <div className={"issue-detail-badge issue-detail-status-badge issue-detail-status-badge-" + issueData.status.toLowerCase().replace(/ /g,"-")}> 
-                {issueData.status}
-            </div> 
           </div>
           <div className="issue-detail-buttons">
             {issueData.status === "To-Do" ? 
@@ -228,6 +228,9 @@ export default class IssueDetail extends Component {
                     <h5 className="issue-detail-devspaces-helper-command-header">Devspaces helper commands</h5>
                     <div className="issue-detail-devspaces-helper-command-text">
                       devspaces create
+                    </div>
+                    <div className="issue-detail-devspaces-helper-command-text">
+                      devspaces start {this.props.repoData.devspaceName ? this.props.repoData.devspaceName: "<devspace name>"}
                     </div>
                     <div className="issue-detail-devspaces-helper-command-text">
                       devspaces bind {this.props.repoData.devspaceName ? this.props.repoData.devspaceName: "<devspace name>"}

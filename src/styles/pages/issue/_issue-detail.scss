@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     width: 65%;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .issue-detail-events{
@@ -20,9 +20,9 @@
 .issue-detail-title{
     text-align: left;
     color: black;
-    font-size: 1.6em;
+    font-size: 1.8em;
     font-weight: 500;
-    margin: 20px 0px;
+    margin: 20px 0px 12px 0px;
 }
 
 .issue-detail-description{
@@ -30,12 +30,25 @@
     color: black;
     font-size: 0.85em;
     line-height: 1.15em;
+    padding: 10px;
+    border: 1px dotted #0000003b;
+    min-height: 120px;
+    border-radius: 3px;
+    margin-top: 25px;
+}
+
+.issue-detail-title-badges{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    flex-wrap: wrap;
+    font-size: 0.95em;
 }
 
 .issue-detail-badges{
     display: flex;
     flex-direction: row;
-    margin-top: 30px;
+    margin-top: 20px;
     flex-wrap: wrap;
     font-size: 0.95em;
 }
@@ -57,7 +70,7 @@
 }
 
 .issue-detail-status-badge-pending-pr-merge{
-    background: #0900ff52;
+    background: #1e7dc757;
 }
 
 .issue-detail-status-badge-closed{
@@ -67,7 +80,7 @@
 .issue-detail-buttons{
     display: flex;
     flex-direction: row;
-    margin-top: 30px;
+    margin-top: 20px;
 }
   
 .issue-detail-button{
@@ -188,5 +201,6 @@
 
 .issue-detail-git-helper-command-text, .issue-detail-devspaces-helper-command-text{
     color: black;
-    font-size: 0.9em;  
+    font-size: 0.9em;
+    padding: 1px 0px;
 }
