@@ -111,6 +111,48 @@ export default class RepoDetail extends Component {
           </button>
             <x-icon class="promote-right-icon" name="subdirectory-arrow-right"></x-icon>
         </div>
+        {this.props.repoData.codefixIssueData ?
+          <div className="codefix-issues-main">
+            <div className="codefix-issues-content">
+              <h4 className="codefix-issues-title">CodeFix Issues</h4>
+              {this.props.repoData.codefixIssueData.issuesFound > 0 ? 
+              <div className="codefix-issues-issue-data">
+                <h5 style={{fontWeight: 500}}>Total Issues: {this.props.repoData.codefixIssueData.issuesFound}</h5>
+                <table>
+                  <thead>
+                    <tr>
+                      <th className="codefix-issues-table-header">Insight</th>
+                      <th className="codefix-issues-table-header">#Issues</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {this.props.repoData.codefixIssueData.issueData.map((data) => 
+                    <tr>
+                      <td className="codefix-issues-table-value">{data.key}</td>
+                      <td className="codefix-issues-table-value">{data.value}</td>
+                    </tr>
+                    )}
+                  </tbody>
+                </table>
+                <h5 style={{fontWeight: 500, margin: "20px 0px 0px 0px"}}>View Issues : &nbsp;
+                  <a style={{color: "blue"}} href={this.props.repoData.codefixIssueData.issuesLink} target="_blank">
+                    Link
+                  </a>
+                </h5>
+                <h5 style={{fontWeight: 500, margin: "10px 0px"}}>Create cleanup tickets : &nbsp;
+                  <a style={{color: "blue"}} href={this.props.repoData.codefixIssueData.ticketsLink} target="_blank">
+                    Link
+                  </a>
+                </h5>
+              </div>:
+                <h5>No issues found!</h5>
+              }   
+              <h5 className='codefix-issues-date'>Date: {this.props.repoData.codefixIssueData.date}</h5>         
+            </div>
+            <img className='codefix-issues-image' src='images/no-bad-code.gif'></img>
+          </div> : 
+          <div></div>
+        }
       </div>
     )
   }

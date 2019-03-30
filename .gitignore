@@ -2,3 +2,4 @@ node_modules
 DevHub-darwin-x64
 build
 *.zip
+idesensor.json

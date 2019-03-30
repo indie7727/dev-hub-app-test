@@ -90,7 +90,7 @@
     padding: 7px 5px;
     border: 0.5px solid;
     border-radius: 5px 0px 0px 5px;
-    font-size: 0.85em;
+    font-size: 0.8em;
     font-weight: 400;
 }
 
@@ -161,4 +161,60 @@
 
 .import-failed-reason{
     color: black;
+}
+
+.codefix-issues-main{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #0000001f;
+    border-top: 1px solid #0000001f;
+    margin: 40px 0px;
+    padding: 40px 0px;
+    flex-wrap: wrap;
+}
+
+.codefix-issues-image{
+    width: 415px;
+    align-self: center;
+}
+
+.codefix-issues-content{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.codefix-issues-date{
+    color: #464646c2;
+    font-weight: 500;
+    font-size: 0.9em;
+    margin: 0px;
+}
+
+.codefix-issues-title{
+    font-weight: 600;
+    font-size: 1.4em;
+    margin: 0px;
+    color: #00008bc4;
+}
+
+.codefix-issues-issue-data{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.codefix-issues-table-value{
+    padding: 8px;
+    border: 1px solid #00000045;
+    font-size: 0.9em;
+}
+
+.codefix-issues-table-header{
+    padding: 10px;
+    border: 1px solid #00000045;
+    font-size: 0.95em;
+    font-weight: 500;
 }
