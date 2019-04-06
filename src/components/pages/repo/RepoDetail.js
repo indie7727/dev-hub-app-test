@@ -24,11 +24,12 @@ export default class RepoDetail extends Component {
     fetch(promoteUrl,
       {
           method: "POST",
-          body: JSON.stringify({version: this.state.version,
-                                scmUrl: this.props.repoData.importData.scmUrl,
-                                appName: this.props.repoData.name.replace(/_/g, '-'),
-                                replicaCount: this.props.repoData.importData.replicaCount
-                              })
+          body: JSON.stringify({
+            version: this.state.version,
+            scmUrl: this.props.repoData.importData.scmUrl,
+            appName: this.props.repoData.name,
+            replicaCount: this.props.repoData.importData.replicaCount
+          })
       })
   }
 
@@ -71,6 +72,26 @@ export default class RepoDetail extends Component {
             )}
             
             <div className="deployment-pods">Pods: {this.props.repoData.stagingData.activePods}/{this.props.repoData.stagingData.requiredPods}</div>
+            <div className="deployment-debug">
+              {parseInt(this.props.repoData.stagingData.activePods) && parseInt(this.props.repoData.stagingData.activePods) > 0 ?
+                <Link 
+                  className="deployment-debug-link" 
+                  to={'/repo_exec/jx-staging/' + this.props.repoData.name}
+                  target="_blank"
+                >
+                  <x-icon class="deployment-debug-icon" name="input" iconset="node_modules/xel/images/icons.svg"></x-icon>
+                  <h4 className='deployment-debug-heading'>Exec</h4>
+                </Link> : <div></div>
+              }
+              <Link 
+                className="deployment-debug-link deployment-debug-link-logs" 
+                to={'/repo_logs/jx-staging/' + this.props.repoData.name} 
+                target="_blank"
+              >
+                <x-icon class="deployment-debug-icon" name="subject" iconset="node_modules/xel/images/icons.svg"></x-icon>
+                <h4 className='deployment-debug-heading'>Logs</h4>
+              </Link>
+            </div>
           </div>
           <div className={"deployment " + 
                             (this.checkIfProdUpdating() ? "deployment-updating" : 
@@ -92,8 +113,29 @@ export default class RepoDetail extends Component {
               </div>
             )}
             <div className="deployment-pods">Pods: {this.props.repoData.productionData.activePods}/{this.props.repoData.productionData.requiredPods}</div>
+            <div className="deployment-debug">
+            {parseInt(this.props.repoData.productionData.activePods) && parseInt(this.props.repoData.productionData.activePods) > 0 ?
+                <Link 
+                  className="deployment-debug-link" 
+                    to={'/repo_exec/jx-production/' + this.props.repoData.name}
+                    target="_blank"
+                >
+                  <x-icon class="deployment-debug-icon" name="input" iconset="node_modules/xel/images/icons.svg"></x-icon>
+                  <h4 className='deployment-debug-heading'>Exec</h4>
+                </Link> : <div></div>
+              }
+              <Link 
+                className="deployment-debug-link deployment-debug-link-logs" 
+                to={'/repo_logs/jx-production/' + this.props.repoData.name} 
+                target="_blank"
+              >
+                <x-icon class="deployment-debug-icon" name="subject" iconset="node_modules/xel/images/icons.svg"></x-icon>
+                <h4 className='deployment-debug-heading'>Logs</h4>
+              </Link>
+            </div>
           </div>
         </div>
+
         <div className="promote">
           <x-icon class="promote-left-icon" name="subdirectory-arrow-right"></x-icon>
           <input 
@@ -145,11 +187,11 @@ export default class RepoDetail extends Component {
                   </a>
                 </h5>
               </div>:
-                <h5>No issues found!</h5>
+                <h5 className="codefix-no-issues-text">No issues found!</h5>
               }   
               <h5 className='codefix-issues-date'>Date: {this.props.repoData.codefixIssueData.date}</h5>         
             </div>
-            <img className='codefix-issues-image' src='images/no-bad-code.gif'></img>
+            <img className='codefix-issues-image' src='images/no-bad-code.png'></img>
           </div> : 
           <div></div>
         }

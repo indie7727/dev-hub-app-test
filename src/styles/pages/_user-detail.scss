@@ -1,20 +1,27 @@
+.user-detail-main{
+    padding: 5% 10%;
+    display: flex;
+    flex-direction: column;
+}
+
 .user-detail-contribution-chart{
-    padding: 5% 12%;
     font-size: 0.5em;
     display: flex;
     flex-direction: column;
-    width: 90%;
+    border: 1px dashed #00000026;
+    max-width: 800px;
 }
 
 .react-calendar-heatmap{
-    border: 1px dashed #00000030;
-    border-radius: 5px;
     padding: 20px 40px 0px 20px;
+    max-width: 800px;
 }
 
 .user-detail-contributions-title{
     align-self: flex-start;
     margin-bottom: 10px;
+    font-weight: 500;
+    padding-left: 25px;
 }
 
 [class^='color-scale-'] {
@@ -46,3 +53,378 @@
 .react-calendar-heatmap .color-scale-3 { fill: #44a340; }
 .react-calendar-heatmap .color-scale-4 { fill: #2f8c36; }
 .react-calendar-heatmap .color-scale-5 { fill: #1e6823; }
+
+.user-detail-codealike-main{
+    align-self: flex-start;
+    display: flex;
+    max-width: 800px;
+    width: 100%;
+    min-height: 334.3px;
+}
+
+.user-detail-bhive-main{
+    align-self: flex-start;
+    display: flex;
+    width: 800px;
+    min-height: 194px;
+}
+
+.user-detail-codealike-time-header{
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background: #4e7698;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.user-detail-addon-badges{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-start;
+    margin-top: 20px;
+    color: black;
+}
+
+.user-detail-addon-badge{
+    padding: 18px;
+    border-radius: 5px;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    background: #ce272780;
+}
+
+.user-detail-addon-badge-title{
+    margin-bottom: 10px;
+}
+
+.user-detail-addon-badge-value{
+    font-size: 1.3em;
+}
+
+.user-detail-codealike-time-tabs{
+    width: 400px;
+    margin: 0px;
+    background: unset;
+    padding: 0px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.user-detail-addon-title{
+    color: white;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.user-detail-codealike-time-tab{
+    min-height: unset;
+}
+
+.user-detail-codealike-time{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    border: 1px dashed #00000026;
+    padding: 40px 25px;
+    width: 100%;
+    border-top: 0px;
+}
+
+.user-detail-bhive-imported{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border: 1px dashed #00000026;
+    padding: 40px 25px;
+    width: 100%;
+    border-top: 0px;
+}
+
+.user-detail-codealike-time-content{
+    display: flex;
+    margin-top: 20px;
+}
+
+.user-detail-codealike-time-doughnut-1, .user-detail-codealike-time-doughnut-2{
+    position: relative;
+    width: 370px;
+    padding: 15px 10px 5px 10px;
+    background: #00000008;
+}
+
+.user-detail-codealike-time-doughnut-2{
+    margin-left: 10px;
+}
+
+.user-detail-codealike-time-doughnut-inner-1, .user-detail-codealike-time-doughnut-inner-2 {
+    margin: -10px 0px 10px -270px;
+    color: #000000cc;
+    font-weight: 500;
+    font-size: 1.35em;
+ }
+
+
+ .user-detail-addon-import-form{
+     display: flex;
+     flex-direction: column;
+ }
+
+ .user-detail-addon-import-form-title{
+    height: 35px;
+    background: #4e7698;
+    display: flex;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 500;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    margin-bottom: 17px;
+ }
+
+.user-detail-codealike-username, .user-detail-codealike-password{
+    box-shadow: inset 0 0.0425em 0.085em rgba(0, 0, 0, 0.2);
+    opacity: .75;
+    width: 200px;
+    height: 38px;
+    padding: 0.6em 0.6em;
+    margin: 0.4em 0 1em 0;
+    border: 1px solid #9e9e9e;
+    border-radius: 5px;
+    background: #fff;
+    font-size: .9em;
+}
+
+.user-detail-addon-button{
+    background-color: #287168c4;
+    color: #fff;
+    font-weight: 500;
+    height: 35px;
+    font-size: 1.1em;
+    width: 200px;
+    cursor: pointer;
+    border-radius: 2px;
+    float: left;
+    margin-top: 7px;
+}
+
+.user-detail-addon-loading-text, .user-detail-loading-text{
+    margin-left: 15px;
+    align-self: center;
+}
+
+.user-detail-addon-loading-throbber, .user-detail-loading-throbber{
+    width: 40px;
+    height: 40px;
+    margin: 8px 0;
+}
+
+.user-detail-addon-loading-main, .user-detail-loading-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed #00000026;
+    width: 100%;
+    border-top: 0px;
+}
+
+.user-detail-loading-main{
+    border: unset;
+    height: 100vh;
+}
+
+.user-detail-addon-import-main{
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 50px;
+    border: 1px dashed #00000026;
+    border-top: 0px;
+    width: 800px;
+}
+
+.user-detail-addon-import-text-main{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    justify-content: center;
+}
+
+.user-detail-addon-import-text{
+    color: black;
+    font-size: 1.4em;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+
+.user-detail-addon-import-sub-text{
+    color: black;
+    margin-top: 25px;
+}
+
+
+.user-detail-bhive-line-chart{
+    height: 150px;
+    border-top: 1px dashed #00000026;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.user-detail-bhive-issue-data{
+    margin: 30px 0px;
+    color: black;
+    width: 100%;
+}
+
+.Collapsible {
+    //background-color: base;
+}
+  
+  
+//The content within the collaspable area
+.Collapsible__contentInner {
+    padding: 5px 10px;
+    border: 1px dotted lightGrey;
+    border-top: 0;
+    margin: 0px 5px;
+
+    p {
+        margin-bottom: 10px;
+        font-size: 14px;
+        line-height: 20px;
+
+        &:last-child {
+        margin-bottom: 0;
+        }
+    }
+}
+
+//The link which when clicked opens the collapsable area
+.Collapsible__trigger {
+    display: block;
+    font-weight: 400;
+    text-decoration: none;
+    color: black;
+    position: relative;
+    border: 1px dotted #00000029;
+    padding: 10px;
+    /* background: #4e5252; */
+    /* color: white; */
+    text-align: left;
+
+
+    &:after {
+        font-family: 'FontAwesome';
+        content: '\f107';
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        display: block;
+        transition: transform 300ms;
+    }
+
+    &.is-open {
+        &:after {
+        transform: rotateZ(180deg);
+    }
+    }
+
+    &.is-disabled {
+        opacity: 0.5;
+        background-color: grey;
+    }
+}
+
+.CustomTriggerCSS {
+    background-color: lightcoral;
+    transition: background-color 200ms ease;
+}
+
+.CustomTriggerCSS--open {
+    background-color: darkslateblue;
+}
+
+.Collapsible__custom-sibling {
+    padding: 5px;
+    font-size: 12px;
+    background-color: #CBB700;
+    color: black;
+}
+
+.Collapsible__trigger:after{
+    content: unset;
+}
+
+.user-detail-bhive-issue-data-collapsible-main{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    align-items: center;
+}
+
+.user-detail-bhive-issue-data-collapsible-arrow{
+    margin-left: 20px;
+}
+
+.user-detail-bhive-issue-data-collapsible-badges{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75em;
+    width: 180px;
+}
+
+.user-detail-bhive-issue-data-collapsible-loc{
+    background: #8080807a;
+    padding: 4px;
+    border-radius: 2px;
+}
+
+.user-detail-bhive-issue-data-collapsible-arson{
+    background: #ff0000ad;
+    padding: 4px;
+    border-radius: 2px;
+}
+
+.user-detail-bhive-issue-data-collapsible-decay{
+    background: rgba(230, 159, 62, 0.82);
+    padding: 4px;
+    border-radius: 2px;
+}
+
+.user-detail-bhive-issue-data-collapsible-clean-code{
+    background: #00800070;
+    padding: 4px;
+    border-radius: 2px;
+}
+
+.user-detail-bhive-issue-data-collapsible-issue-text{
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    padding: 0px 20px;
+    align-items: center;
+}
+
+.user-detail-bhive-issue-data-collapsible-issue-description{
+    font-size: 0.7em;
+    margin-top: 5px;
+}
+
+.user-detail-bhive-issue-data-collapsible-issue-file{
+    font-size: 0.8em;
+}
+
+.user-detail-bhive-issue-data-collapsible-issue-link{
+    color: blue;
+    text-decoration: underline;
+    font-size: 0.85em;
+}

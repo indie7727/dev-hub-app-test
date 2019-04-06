@@ -12,6 +12,8 @@ var promoteUrl = backendBaseUrl + "/api/promote_app/"
 var issueUrl = backendBaseUrl + "/api/issues/"
 var branchUrl = backendBaseUrl + "/api/branches/"
 var prUrl = backendBaseUrl + "/api/prs/"
+var wsideUrl = backendBaseUrl + "/api/wside/"
+var repoDebugUrl = backendBaseUrl + "/api/repo_debug/"
 
 exports.importUrl = importUrl;
 exports.addonsUrl = addonsUrl;
@@ -20,3 +22,5 @@ exports.promoteUrl = promoteUrl;
 exports.issueUrl = issueUrl;
 exports.branchUrl = branchUrl;
 exports.prUrl = prUrl;
+exports.wsideUrl = wsideUrl;
+exports.repoDebugUrl = repoDebugUrl;

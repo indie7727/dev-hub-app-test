@@ -1,6 +1,7 @@
 // webpack.config.js
 var path = require('path');
 var webpack = require('webpack');
+const nodeExternals = require('webpack-node-externals');
 
 var config = {
     context: path.resolve(__dirname + '/src'),
@@ -41,12 +42,15 @@ var config = {
     devtool: 'source-map',
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.IgnorePlugin(new RegExp("^(fs|ipc)$"))
+        new webpack.IgnorePlugin(new RegExp("^(ipc)$"))
     ],
-    target: "async-node",
+    target: "node",
     node: {
         fs: "empty"
     },
+    externals: [nodeExternals({
+        whitelist: ['jquery', 'webpack/hot/dev-server', /^lodash/]
+    })]
 };
 
 module.exports = config;

@@ -14,6 +14,8 @@ import ImportRepo from './components/pages/import-repo/ImportRepo'
 import EditRepo from './components/pages/import-repo/EditRepo'
 import RepoLayout from './components/pages/repo/RepoLayout'
 import RepoDetail from './components/pages/repo/RepoDetail'
+import RepoExec from './components/pages/repo/RepoExec'
+import RepoLogs from './components/pages/repo/RepoLogs'
 import AllIssues from './components/pages/issue/AllIssues'
 import IssueDetail from './components/pages/issue/IssueDetail'
 import CreateIssue from './components/pages/issue/CreateIssue'
@@ -36,5 +38,8 @@ render((
         <Route path="/repos/:repoId/add_issue" component={CreateIssue} />
       </Route>
     </Route>
+    <Route path="/repo_exec/:namespace/:repoName" component={RepoExec} />
+    <Route path="/repo_logs/:namespace/:repoName" component={RepoLogs} />
+    
   </Router>
 ), document.getElementById('app'));

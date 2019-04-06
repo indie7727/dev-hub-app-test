@@ -41,6 +41,11 @@
     font-size: 0.8em;
     margin-top: 13px;
     overflow-wrap: break-word;
+    min-height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 10px;
 }
 
 .deployment-url > a {
@@ -52,6 +57,37 @@
     color: black;
     font-size: 0.8em;
     margin-top: 13px;
+}
+
+.deployment-debug{
+    display: flex;
+    justify-content: center;
+}
+
+.deployment-debug-link{
+    padding: 1px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+    border: 1px dotted #0000005c;
+    border-radius: 5px;
+    background: #ffffff9c;
+}
+
+.deployment-debug-link-logs{
+    margin-left: 5px;
+}
+
+.deployment-debug-icon{
+    height: 17px;
+    width: 17px;
+}
+
+.deployment-debug-heading{
+    font-size: 0.8em;
+    margin: 0px;
+    margin-left: 3px;
 }
 
 .deployment-up {
@@ -165,17 +201,17 @@
 
 .codefix-issues-main{
     display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid #0000001f;
-    border-top: 1px solid #0000001f;
+    justify-content: center;
     margin: 40px 0px;
     padding: 40px 0px;
     flex-wrap: wrap;
+    background: #0000000a;
 }
 
 .codefix-issues-image{
-    width: 415px;
+    width: 350px;
     align-self: center;
+    padding: 10px;
 }
 
 .codefix-issues-content{
@@ -183,7 +219,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-right: 50px;
+    margin-top: 10px;
 }
 
 .codefix-issues-date{

@@ -66,6 +66,19 @@ function createWindow () {
   ];
 
   Menu.setApplicationMenu(Menu.buildFromTemplate(template));
+
+  var handleRedirect = (e, url) => {
+    if(url != win.webContents.getURL() && 
+       url.indexOf("dev-hub.auth0.com") === -1 && 
+       url.indexOf("repo_logs") === -1 &&
+       url.indexOf("repo_exec") === -1) {
+      e.preventDefault()
+      require('electron').shell.openExternal(url)
+    }
+  }
+  
+  win.webContents.on('will-navigate', handleRedirect)
+  win.webContents.on('new-window', handleRedirect)
 }
 
 // This method will be called when Electron has finished

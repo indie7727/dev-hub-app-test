@@ -182,15 +182,15 @@ export default class CreateIssue extends Component {
                   </div>
                 </div>
                 <Link 
-                    to={{ 
-                      pathname: "repos/" + this.props.repoId + "/issues/" + this.state.id,
-                    }} 
-                    onClick={this.createIssue.bind(this)}
-                  >
-                    <button className="create-issue-button btn btn-prev btn-primary btn-lg pull-right">
-                      Create Issue
-                    </button>
-                  </Link>
+                  to={{ 
+                    pathname: "repos/" + this.props.repoId + "/issues/" + this.state.id,
+                  }} 
+                  onClick={this.createIssue.bind(this)}
+                >
+                  <button className="create-issue-button btn btn-prev btn-primary btn-lg pull-right">
+                    Create Issue
+                  </button>
+                </Link>
             </div>
       </div>
     )
