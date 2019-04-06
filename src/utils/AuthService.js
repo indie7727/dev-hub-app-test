@@ -43,7 +43,7 @@ export default class AuthService extends EventEmitter {
           auth0Id: profile.sub,
           name: profile.name,
           contributions: {}
-        })
+        }, {merge: true})
         this.setProfile(profile)
         
         // navigate to the home route
