@@ -11,7 +11,7 @@ const {
 
 // Listen for service successfully started
 ipcRenderer.on(NOTIFICATION_SERVICE_STARTED, (_, token) => {
-  localStorage.setItem('fcm_token', token)
+  localStorage.setItem('fcmToken', token)
   console.log('service successfully started', token)
 })
 
@@ -22,7 +22,7 @@ ipcRenderer.on(NOTIFICATION_SERVICE_ERROR, (_, error) => {
 
 // Send FCM token to backend
 ipcRenderer.on(TOKEN_UPDATED, (_, token) => {
-  localStorage.setItem('fcm_token', token)
+  localStorage.setItem('fcmToken', token)
   console.log('FCM token updated', token)
 })
 

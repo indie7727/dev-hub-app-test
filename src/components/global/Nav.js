@@ -22,12 +22,17 @@ class Nav extends Component {
      });
   }
 
-  checkIfProdUpdating(productionData) {
-    if(productionData.version != productionData.targetVersion)
+  checkIfDeploymentIsUpdating(data) {
+    if(data.version != data.targetVersion)
       return true
-    else if(productionData.activePods != productionData.requiredPods)
+    else if(data.activePods != data.requiredPods)
       return true
     return false;
+  }
+
+  checkIfDeploymentIsUp(data) {
+    if(data.activePods > 0)
+      return true
   }
 
   componentDidMount() {
@@ -51,8 +56,8 @@ class Nav extends Component {
       for(var i=0;i<repos.length; i++){
         let idx = i;
         db.collection("repos").doc(repos[idx].id).onSnapshot((repoDoc) => {
-          repos[idx].isProdUp = repoDoc.data().productionData ? repoDoc.data().productionData.isUp : false,
-          repos[idx].isProdUpdating = repoDoc.data().productionData ? this.checkIfProdUpdating(repoDoc.data().productionData) : false          
+          repos[idx].isProdUp = repoDoc.data().productionData ? this.checkIfDeploymentIsUp(repoDoc.data().productionData) : false,
+          repos[idx].isProdUpdating = repoDoc.data().productionData ? this.checkIfDeploymentIsUpdating(repoDoc.data().productionData) : false          
           this.setState({repos: repos});
         })
       }

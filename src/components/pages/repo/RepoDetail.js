@@ -33,12 +33,17 @@ export default class RepoDetail extends Component {
       })
   }
 
-  checkIfProdUpdating() {
-    if(this.props.repoData.productionData.version != this.props.repoData.productionData.targetVersion)
+  checkIfDeploymentIsUpdating(data) {
+    if(data.version != data.targetVersion)
       return true
-    else if(this.props.repoData.productionData.activePods != this.props.repoData.productionData.requiredPods)
+    else if(data.activePods != data.requiredPods)
       return true
     return false;
+  }
+
+  checkIfDeploymentIsUp(data) {
+    if(data.activePods > 0)
+      return true
   }
 
   render() {
@@ -59,10 +64,17 @@ export default class RepoDetail extends Component {
       <div className="repo-content"> 
         <div className="deployment-status">
           <div className={"deployment " + 
-                            (this.props.repoData.stagingData.isUpdating? "deployment-updating" : 
-                            this.props.repoData.stagingData.isUp? "deployment-up" : "deployment-down")}>
+                            (this.checkIfDeploymentIsUpdating(this.props.repoData.stagingData)? "deployment-updating" : 
+                            this.checkIfDeploymentIsUp(this.props.repoData.stagingData)? "deployment-up" : "deployment-down")}>
             <h5 className="deployment-heading">Staging</h5>
-            <div className="deployment-version">v{this.props.repoData.stagingData.version}</div>
+            <div className="deployment-version">
+              v{this.props.repoData.stagingData.version}
+              {this.props.repoData.stagingData.version!=this.props.repoData.stagingData.targetVersion ?
+                <div style={{display: "flex", flexDirection: "row"}}>
+                  <x-icon class="version-arrow-icon" name="arrow-forward"></x-icon> 
+                  v{this.props.repoData.stagingData.targetVersion}
+                </div>: ""}
+            </div>
             {this.props.repoData.stagingData.urls.map((url) => 
               <div className="deployment-url">
                 <a href={url} target="_blank">
@@ -94,8 +106,8 @@ export default class RepoDetail extends Component {
             </div>
           </div>
           <div className={"deployment " + 
-                            (this.checkIfProdUpdating() ? "deployment-updating" : 
-                            this.props.repoData.productionData.isUp ? "deployment-up" : "deployment-down")}>
+                            (this.checkIfDeploymentIsUpdating(this.props.repoData.productionData) ? "deployment-updating" : 
+                            this.checkIfDeploymentIsUp(this.props.repoData.productionData) ? "deployment-up" : "deployment-down")}>
             <h5 className="deployment-heading">Production</h5>
             <div className="deployment-version">
               v{this.props.repoData.productionData.version}

@@ -42,7 +42,7 @@ export default class AuthService extends EventEmitter {
           username: profile.nickname,
           auth0Id: profile.sub,
           name: profile.name,
-          fcm_token: localStorage.getItem('fcm_token')
+          fcmToken: localStorage.getItem('fcmToken')
         }, {merge: true})
         this.setProfile(profile)
         
