@@ -1,7 +1,37 @@
-const {shell, app, Menu, BrowserWindow} = require('electron')
+const {dialog, app, Menu, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
 
+const log = require('electron-log');
+const { autoUpdater } = require("electron-updater")
+
+autoUpdater.logger = log;
+autoUpdater.logger.transports.file.level = 'debug';
+log.transports.rendererConsole.level = 'debug';
+log.transports.rendererConsole.format = '{level} {text}';
+log.info('App starting...');
+autoUpdater.checkForUpdates();
+setInterval(() => {
+  autoUpdater.checkForUpdates();
+}, 2 * 60 * 60 * 1000)
+
+autoUpdater.on('error', (error) => {
+  dialog.showErrorBox('Error: ', error == null ? "unknown" : (error.stack || error).toString())
+})
+
+autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
+  const dialogOpts = {
+    type: 'info',
+    buttons: ['Restart', 'Later'],
+    title: 'Application Update',
+    message: "A new version of DevHub has been downloaded",
+    detail: 'Restart the application to apply the updates.'
+  }
+
+  dialog.showMessageBox(dialogOpts, (response) => {
+    if (response === 0) autoUpdater.quitAndInstall()
+  })
+})
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -66,7 +96,7 @@ function createWindow () {
   ];
 
   Menu.setApplicationMenu(Menu.buildFromTemplate(template));
-
+  
   var handleRedirect = (e, url) => {
     if(url != win.webContents.getURL() && 
        url.indexOf("dev-hub.auth0.com") === -1 && 

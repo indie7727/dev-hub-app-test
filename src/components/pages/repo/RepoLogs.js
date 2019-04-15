@@ -25,7 +25,7 @@ export default class RepoLogs extends Component {
         .then(json => {
             const script = document.createElement('script');
 
-            fs.readFile(`${remote.app.getAppPath()}/dist/logs.js`, 'utf-8', (err, data) => {
+            fs.readFile(`${remote.app.getAppPath()}/src/utils/repo-debug/logs.js`, 'utf-8', (err, data) => {
                 data = data.replace("__token__", json.token)
                 data = data.replace("__app_name__", json.app_name)
                 data = data.replace("__namespace__", this.props.params.namespace)

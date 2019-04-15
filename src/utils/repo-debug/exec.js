@@ -145,10 +145,13 @@ window.onresize = () => {
 };
 
 var appPath = remote.app.getAppPath();
+appPath = appPath.split('/')
+appPath.pop()
+appPath = appPath.join('/')
 
-var kubectl = "kubectl.exe"
+var kubectl = "kubectl-win"
 if(process.platform === "darwin"){
-    kubectl = "kubectl-darwin"
+    kubectl = "kubectl-mac"
 }
 else if(process.platform === "linux"){
     kubectl = "kubectl-linux"

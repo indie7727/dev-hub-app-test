@@ -24,8 +24,7 @@ export default class RepoExec extends Component {
         .then(response => response.json())
         .then(json => {
             const script = document.createElement('script');
-
-            fs.readFile(`${remote.app.getAppPath()}/dist/exec.js`, 'utf-8', (err, data) => {
+            fs.readFile(`${remote.app.getAppPath()}/src/utils/repo-debug/exec.js`, 'utf-8', (err, data) => {
                 data = data.replace("__token__", json.token)
                 data = data.replace("__sample_pod__", json.sample_pod)
                 data = data.replace("__namespace__", this.props.params.namespace)

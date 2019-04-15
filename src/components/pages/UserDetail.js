@@ -394,13 +394,13 @@ export default class UserDetail extends Component {
                               105 LOC
                             </span>
                             <span className="user-detail-bhive-issue-data-collapsible-arson">
-                              10%
+                              12%
                             </span>
                             <span className="user-detail-bhive-issue-data-collapsible-decay">
-                              20%
+                              15%
                             </span>
                             <span className="user-detail-bhive-issue-data-collapsible-clean-code">
-                              70%
+                              73%
                             </span> 
                           </div>
                           <x-icon class="user-detail-bhive-issue-data-collapsible-arrow" name="keyboard-arrow-down" iconset="node_modules/xel/images/icons.svg"></x-icon>
@@ -424,16 +424,16 @@ export default class UserDetail extends Component {
                         <div style={{alignSelf: "flex-end", display: "flex"}}> 
                           <div className="user-detail-bhive-issue-data-collapsible-badges">
                             <span className="user-detail-bhive-issue-data-collapsible-loc">
-                              105 LOC
+                              5 LOC
                             </span>
                             <span className="user-detail-bhive-issue-data-collapsible-arson">
-                              10%
+                              0%
                             </span>
                             <span className="user-detail-bhive-issue-data-collapsible-decay">
-                              20%
+                              0%
                             </span>
                             <span className="user-detail-bhive-issue-data-collapsible-clean-code">
-                              70%
+                              100%
                             </span> 
                           </div>
                           <x-icon class="user-detail-bhive-issue-data-collapsible-arrow" name="keyboard-arrow-down" iconset="node_modules/xel/images/icons.svg"></x-icon>

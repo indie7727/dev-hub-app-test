@@ -1,0 +1,4 @@
+provider: s3
+bucket: dev-hub-releases
+updaterCacheDirName: devhub-updater
+path: asjd3oijoas239dmn01vpot

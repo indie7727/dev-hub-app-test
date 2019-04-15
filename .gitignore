@@ -3,3 +3,4 @@ DevHub-darwin-x64
 build
 *.zip
 idesensor.json
+dist

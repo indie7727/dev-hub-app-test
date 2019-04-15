@@ -1,6 +1,10 @@
 # Dev Hub Electron App
 ---------
 
+### Install node 
+
+`brew install node@8` (tested with 8.15.1)
+
 ### Install dependencies
 
 `npm install`
@@ -11,7 +15,7 @@
 
 `npm run build`
 
-### Run app
+### Run app to debug
 
 `npm run watch` - runs webpack/react
 
@@ -19,8 +23,6 @@ And in another terminal window run:
 
 `npm run start` - runs electron
 
-### Package app
+### Package and publish app to s3
 
-`npm run package`
-
-`zip -r -y dev-hub-app.zip DevHub-darwin-x64/DevHub.app`
+`npm run dist`

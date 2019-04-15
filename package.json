@@ -1,15 +1,49 @@
 {
   "name": "DevHub",
-  "version": "1.0.0",
+  "version": "1.0.10",
   "description": "Dev Hub",
   "main": "main.js",
+  "author": {
+    "name": "DevFactory",
+    "email": "vadiraja.k@codenation.co.in"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ENV=development electron .",
     "watch": "webpack-dev-server --hot",
     "electron-rebuild": "electron-rebuild",
     "build": "webpack",
-    "package": "webpack --config webpack.config.production.js && electron-packager . DevHub --platform=darwin --arch=all --overwrite"
+    "package": "webpack --config webpack.config.production.js && electron-packager . DevHub --platform=darwin --arch=all --overwrite",
+    "pack": "webpack --config webpack.config.production.js && electron-builder -ml --dir",
+    "dist": "webpack --config webpack.config.production.js && electron-builder -m --publish always"
+  },
+  "build": {
+    "appId": "com.electron.devhub",
+    "publish": {
+      "provider": "s3",
+      "bucket": "dev-hub-releases",
+      "path": "asjd3oijoas239dmn01vpot"
+    },
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    },
+    "win": {
+      "target": "squirrel"
+    },
+    "linux": {
+      "category": "Development"
+    },
+    "files": [
+      "**/*",
+      "build/*",
+      "!idesensor.json",
+      "!k8s/*"
+    ],
+    "extraResources": [
+      "k8s/config",
+      "k8s/kubectl-${os}",
+      "k8s/kubetail"
+    ]
   },
   "devDependencies": {
     "@babel/plugin-transform-regenerator": "^7.3.4",
@@ -23,6 +57,8 @@
     "babel-preset-react": "^6.22.0",
     "babel-preset-stage-0": "^6.22.0",
     "css-loader": "^0.26.1",
+    "electron": "^4.1.4",
+    "electron-builder": "^20.39.0",
     "electron-packager": "^12.1.0",
     "electron-prebuilt": "^1.4.13",
     "electron-rebuild": "^1.8.4",
@@ -38,10 +74,12 @@
     "babel-preset-env": "^1.7.0",
     "browserify": "^16.2.3",
     "chart.js": "^2.8.0",
-    "electron": "^4.1.4",
     "electron-is": "^3.0.0",
+    "electron-log": "^3.0.5",
+    "electron-updater": "^4.0.6",
     "events": "^1.1.1",
     "fs": "0.0.1-security",
+    "fsevents": "^1.2.7",
     "json-loader": "^0.5.4",
     "jwt-decode": "^2.1.0",
     "lodash.debounce": "^4.0.8",
