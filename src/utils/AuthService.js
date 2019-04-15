@@ -71,6 +71,10 @@ export default class AuthService extends EventEmitter {
 
   loggedIn() {
     // Checks if there is a saved token and it's still valid
+    if(!!this.getToken())
+      firebase.firestore().collection("users").doc(this.getProfile().nickname).set({
+        fcmToken: localStorage.getItem('fcmToken')
+      }, {merge: true})
     return !!this.getToken()
   }
 
