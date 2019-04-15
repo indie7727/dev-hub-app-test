@@ -7,8 +7,8 @@
 
 ### Install dependencies
 
-`npm install`
-`npm install electron@latest`
+`npm install`<br>
+`npm install electron@latest`<br>
 `npm run electron-rebuild`
 
 ### Build app
