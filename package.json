@@ -76,6 +76,7 @@
     "chart.js": "^2.8.0",
     "electron-is": "^3.0.0",
     "electron-log": "^3.0.5",
+    "electron-push-receiver": "^2.1.2",
     "electron-updater": "^4.0.6",
     "events": "^1.1.1",
     "fs": "0.0.1-security",

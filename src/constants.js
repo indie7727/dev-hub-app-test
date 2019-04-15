@@ -1,7 +1,10 @@
-if(process.env.ENV === 'development')
-    var backendBaseUrl = "https://dev-hub-server-staging.k8.devfactory.com"
-else
-    var backendBaseUrl = "https://dev-hub-server.k8.devfactory.com"
+if(process.env.ENV === 'development'){
+    var backendBaseUrl = "https://dev-hub-server-staging.k8.devfactory.com";
+    var cloudMessagingSenderId = 565512589939;
+} else {
+    var backendBaseUrl = "https://dev-hub-server.k8.devfactory.com";
+    var cloudMessagingSenderId = 646086604998;
+}
 
 console.log("backend URl", backendBaseUrl)
 
@@ -24,3 +27,4 @@ exports.branchUrl = branchUrl;
 exports.prUrl = prUrl;
 exports.wsideUrl = wsideUrl;
 exports.repoDebugUrl = repoDebugUrl;
+exports.cloudMessagingSenderId = cloudMessagingSenderId;

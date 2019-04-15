@@ -2,6 +2,8 @@ const {dialog, app, Menu, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
 
+const { setup: setupPushReceiver } = require('electron-push-receiver');
+
 const log = require('electron-log');
 const { autoUpdater } = require("electron-updater")
 
@@ -14,10 +16,6 @@ autoUpdater.checkForUpdates();
 setInterval(() => {
   autoUpdater.checkForUpdates();
 }, 2 * 60 * 60 * 1000)
-
-autoUpdater.on('error', (error) => {
-  dialog.showErrorBox('Error: ', error == null ? "unknown" : (error.stack || error).toString())
-})
 
 autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
   const dialogOpts = {
@@ -42,8 +40,8 @@ function createWindow () {
 
   if(process.env.ENV === 'development')
     win = new BrowserWindow({
-      width: 1200,
-      height: 950,
+      width: 1100,
+      height: 750,
       minHeight: 450,
       minWidth: 870,
     })
@@ -64,6 +62,9 @@ function createWindow () {
     protocol: 'file:',
     slashes: true
   }))
+
+  // Initialize electron-push-receiver component. Should be called before 'did-finish-load'
+  setupPushReceiver(win.webContents);
 
   // Open the DevTools.
   win.webContents.openDevTools()

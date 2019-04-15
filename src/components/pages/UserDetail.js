@@ -28,11 +28,14 @@ export default class UserDetail extends Component {
       if(!doc.data())
         return
       var contributions = doc.data().contributions;
-      var values = this.state.values
-      Object.keys(contributions).forEach((key) => {
-        values[key] = contributions[key].value
-      })
-      this.setState({values: values})
+
+      if(contributions){
+        var values = this.state.values
+        Object.keys(contributions).forEach((key) => {
+          values[key] = contributions[key].value
+        })
+        this.setState({values: values})
+      }
       this.setState({wside: doc.data().wside})
       this.setState({bhive: doc.data().bhive})
       this.setState({loading: false})
