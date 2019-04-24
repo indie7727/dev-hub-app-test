@@ -14,8 +14,8 @@
     "electron-rebuild": "electron-rebuild",
     "build": "webpack",
     "package": "webpack --config webpack.config.production.js && electron-packager . DevHub --platform=darwin --arch=all --overwrite",
-    "pack": "webpack --config webpack.config.production.js && electron-builder -ml --dir",
-    "dist": "webpack --config webpack.config.production.js && electron-builder -m --publish always"
+    "pack": "webpack --config webpack.config.production.js && electron-builder -mlw --dir",
+    "dist": "webpack --config webpack.config.production.js && electron-builder -mlw --publish always"
   },
   "build": {
     "appId": "com.electron.devhub",
@@ -74,6 +74,7 @@
     "babel-preset-env": "^1.7.0",
     "browserify": "^16.2.3",
     "chart.js": "^2.8.0",
+    "electron-builder-squirrel-windows": "^20.40.0",
     "electron-is": "^3.0.0",
     "electron-log": "^3.0.5",
     "electron-push-receiver": "^2.1.2",
