@@ -1,9 +1,10 @@
 # Dev Hub Electron App
 ---------
 
-### Install node 
+### Install node & npm
 
-`brew install node@8` (tested with 8.15.1)
+`brew install node@8` (tested with 8.15.1)<br>
+NPM (tested with npm 6.4.1)
 
 ### Install dependencies
 
