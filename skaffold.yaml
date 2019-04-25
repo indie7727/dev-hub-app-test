@@ -1,0 +1,30 @@
+apiVersion: skaffold/v1beta2
+kind: Config
+build:
+  artifacts:
+  - image: changeme
+    context: .
+    docker: {}
+  tagPolicy:
+    envTemplate:
+      template: '{{.DOCKER_REGISTRY}}/indie7727/dev-hub-app-test:{{.VERSION}}'
+  local: {}
+deploy:
+  kubectl: {}
+profiles:
+- name: dev
+  build:
+    artifacts:
+    - docker: {}
+    tagPolicy:
+      envTemplate:
+        template: '{{.DOCKER_REGISTRY}}/indie7727/dev-hub-app-test:{{.DIGEST_HEX}}'
+    local: {}
+  deploy:
+    helm:
+      releases:
+      - name: dev-hub-app-test
+        chartPath: charts/dev-hub-app-test
+        setValueTemplates:
+          image.repository: '{{.DOCKER_REGISTRY}}/indie7727/dev-hub-app-test'
+          image.tag: '{{.DIGEST_HEX}}'
