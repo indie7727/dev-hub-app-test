@@ -73,7 +73,7 @@
     "autoprefixer-loader": "^3.2.0",
     "babel-preset-env": "^1.7.0",
     "browserify": "^16.2.3",
-    "chart.js": "^2.8.0",
+    "chart.js": "^2.9.4",
     "electron-builder-squirrel-windows": "^20.40.0",
     "electron-is": "^3.0.0",
     "electron-log": "^3.0.5",
